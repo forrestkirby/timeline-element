@@ -1,0 +1,905 @@
+{
+	"@import": "./element.php",
+	"name": "timeline",
+	"title": "Timeline",
+	"icon": "${url:images/icon.svg}",
+	"iconSmall": "${url:images/iconSmall.svg}",
+	"element": true,
+	"container": true,
+	"width": 600,
+	"defaults":
+	{
+		"show_title": true,
+		"show_meta": true,
+		"show_content": true,
+		"show_image": true,
+		"show_link": true,
+		"align_default": "left",
+		"align_medium": "alternate-left",
+		"title_element": "h3",
+		"meta_style": "meta",
+		"meta_align": "bottom",
+		"icon_ratio": 4,
+		"image_thumbnail": false,
+		"image_align": "top",
+		"image_grid_width": "1-2",
+		"image_breakpoint": "m",
+		"image_svg_color": "emphasis",
+		"link_text": "Read more",
+		"link_style": "default",
+		"margin": "default",
+		"item_animation": ""
+	},
+	"placeholder":
+	{
+		"children": [
+		{
+			"type": "timeline_item",
+			"props":
+			{}
+		},
+		{
+			"type": "timeline_item",
+			"props":
+			{}
+		},
+		{
+			"type": "timeline_item",
+			"props":
+			{}
+		}]
+	},
+	"templates":
+	{
+		"render": "./templates/template.php",
+		"content": "./templates/content.php"
+	},
+	"fields":
+	{
+		"content":
+		{
+			"label": "Items",
+			"type": "content-items",
+			"item": "timeline_item",
+			"media":
+			{
+				"type": "image",
+				"item":
+				{
+					"title": "title",
+					"image": "src"
+				}
+			}
+		},
+		"show_title":
+		{
+			"label": "Display",
+			"type": "checkbox",
+			"text": "Show the title"
+		},
+		"show_meta":
+		{
+			"type": "checkbox",
+			"text": "Show the meta text"
+		},
+		"show_image":
+		{
+			"type": "checkbox",
+			"text": "Show the image"
+		},
+		"show_content":
+		{
+			"type": "checkbox",
+			"text": "Show the content"
+		},
+		"show_link":
+		{
+			"description": "Show or hide content fields without the need to delete the content itself.",
+			"type": "checkbox",
+			"text": "Show the link"
+		},
+		"align_default":
+		{
+			"label": "Phone Portrait",
+			"description": "Set the alignment of timeline items for each breakpoint. <i>Inherit</i> refers to the number of columns on the next smaller screen size.",
+			"type": "select",
+			"options":
+			{
+				"Left": "left",
+				"Right": "right",
+				"Alternate Left": "alternate-left",
+				"Alternate Right": "alternate-right"
+			}
+		},
+		"align_small":
+		{
+			"label": "Phone Landscape",
+			"description": "Set the alignment of timeline items for each breakpoint. <i>Inherit</i> refers to the number of columns on the next smaller screen size.",
+			"type": "select",
+			"default": "",
+			"options":
+			{
+				"Inherit": "",
+				"Left": "left",
+				"Right": "right",
+				"Alternate Left": "alternate-left",
+				"Alternate Right": "alternate-right"
+			}
+		},
+		"align_medium":
+		{
+			"label": "Tablet Landscape",
+			"description": "Set the alignment of timeline items for each breakpoint. <i>Inherit</i> refers to the number of columns on the next smaller screen size.",
+			"type": "select",
+			"default": "",
+			"options":
+			{
+				"Inherit": "",
+				"Left": "left",
+				"Right": "right",
+				"Alternate Left": "alternate-left",
+				"Alternate Right": "alternate-right"
+			}
+		},
+		"align_large":
+		{
+			"label": "Desktop",
+			"description": "Set the alignment of timeline items for each breakpoint. <i>Inherit</i> refers to the number of columns on the next smaller screen size.",
+			"type": "select",
+			"default": "alternate-left",
+			"options":
+			{
+				"Inherit": "",
+				"Left": "left",
+				"Right": "right",
+				"Alternate Left": "alternate-left",
+				"Alternate Right": "alternate-right"
+			}
+		},
+		"align_xlarge":
+		{
+			"label": "Large Screens",
+			"description": "Set the alignment of timeline items for each breakpoint. <i>Inherit</i> refers to the number of columns on the next smaller screen size.",
+			"type": "select",
+			"default": "",
+			"options":
+			{
+				"Inherit": "",
+				"Left": "1",
+				"Right": "2",
+				"Alternate Left": "3",
+				"Alternate Right": "4"
+			}
+		},
+		"item_margin":
+		{
+			"label": "Margin Top",
+			"description": "Set the top margin.",
+			"type": "select",
+			"default": "",
+			"options":
+			{
+				"Small": "small",
+				"Default": "",
+				"Medium": "medium",
+				"Large": "large",
+				"X-Large": "xlarge",
+				"None": "remove"
+			}
+		},
+		"panel_style":
+		{
+			"label": "Style",
+			"description": "Select one of the boxed card styles or a blank panel.",
+			"type": "select",
+			"default": "",
+			"options":
+			{
+				"None": "",
+				"Card Default": "card-default",
+				"Card Primary": "card-primary",
+				"Card Secondary": "card-secondary",
+				"Card Hover": "card-hover"
+			}
+		},
+		"panel_size":
+		{
+			"label": "Size",
+			"description": "Define the card's size by selecting the padding between the card and its content.",
+			"type": "select",
+			"default": "",
+			"options":
+			{
+				"Small": "small",
+				"Default": "",
+				"Large": "large"
+			},
+			"enable": "panel_style"
+		},
+		"item_maxwidth":
+		{
+			"type": "select",
+			"label": "Max Width",
+			"description": "Set the maximum width.",
+			"default": "",
+			"options":
+			{
+				"None": "",
+				"Small": "small",
+				"Medium": "medium",
+				"Large": "large",
+				"X-Large": "xlarge",
+				"XX-Large": "xxlarge"
+			}
+		},
+		"title_style":
+		{
+			"label": "Style",
+			"description": "Title styles differ in font-size but may also come with a predefined color, size and font.",
+			"type": "select",
+			"default": "",
+			"options":
+			{
+				"Default": "",
+				"Hero": "heading-hero",
+				"Primary": "heading-primary",
+				"H1": "h1",
+				"H2": "h2",
+				"H3": "h3",
+				"H4": "h4",
+				"H5": "h5",
+				"H6": "h6"
+			},
+			"enable": "show_title"
+		},
+		"title_decoration":
+		{
+			"label": "Decoration",
+			"description": "Decorate the title with a divider, bullet or a line that is vertically centered to the heading.",
+			"type": "select",
+			"default": "",
+			"options":
+			{
+				"None": "",
+				"Divider": "divider",
+				"Bullet": "bullet",
+				"Line": "line"
+			},
+			"enable": "show_title"
+		},
+		"title_color":
+		{
+			"label": "Color",
+			"description": "Select the text color. If the Background option is selected, styles that don't apply a background image use the primary color instead.",
+			"type": "select",
+			"default": "",
+			"options":
+			{
+				"Default": "",
+				"Muted": "muted",
+				"Emphasis": "emphasis",
+				"Primary": "primary",
+				"Success": "success",
+				"Warning": "warning",
+				"Danger": "danger",
+				"Background": "background"
+			},
+			"enable": "show_title"
+		},
+		"title_element":
+		{
+			"label": "HTML Element",
+			"description": "Choose one of the six heading elements to fit your semantic structure.",
+			"type": "select",
+			"options":
+			{
+				"H1": "h1",
+				"H2": "h2",
+				"H3": "h3",
+				"H4": "h4",
+				"H5": "h5",
+				"H6": "h6"
+			},
+			"enable": "show_title"
+		},
+		"title_margin":
+		{
+			"label": "Margin Top",
+			"description": "Set the top margin.",
+			"type": "select",
+			"default": "",
+			"options":
+			{
+				"Small": "small",
+				"Default": "",
+				"Medium": "medium",
+				"Large": "large",
+				"X-Large": "xlarge",
+				"None": "remove"
+			},
+			"enable": "show_title"
+		},
+		"meta_style":
+		{
+			"label": "Style",
+			"description": "Select a predefined meta text style, including color, size and font-family.",
+			"type": "select",
+			"options":
+			{
+				"Default": "",
+				"Meta": "meta",
+				"H4": "h4",
+				"H5": "h5",
+				"H6": "h6"
+			},
+			"enable": "show_meta"
+		},
+		"meta_color":
+		{
+			"label": "Color",
+			"description": "Select the text color.",
+			"type": "select",
+			"default": "",
+			"options":
+			{
+				"Default": "",
+				"Muted": "muted",
+				"Emphasis": "emphasis",
+				"Primary": "primary",
+				"Success": "success",
+				"Warning": "warning",
+				"Danger": "danger"
+			},
+			"enable": "show_meta"
+		},
+		"meta_align":
+		{
+			"label": "Alignment",
+			"description": "Align the meta text above or below the title.",
+			"type": "select",
+			"options":
+			{
+				"Top": "top",
+				"Bottom": "bottom"
+			},
+			"enable": "show_meta"
+		},
+		"meta_margin":
+		{
+			"label": "Margin Top",
+			"description": "Set the top margin.",
+			"type": "select",
+			"default": "",
+			"options":
+			{
+				"Small": "small",
+				"Default": "",
+				"Medium": "medium",
+				"Large": "large",
+				"X-Large": "xlarge",
+				"None": "remove"
+			},
+			"enable": "show_meta"
+		},
+		"content_style":
+		{
+			"label": "Style",
+			"description": "Select a predefined text style, including color, size and font-family.",
+			"type": "select",
+			"default": "",
+			"options":
+			{
+				"Default": "",
+				"Lead": "lead"
+			},
+			"enable": "show_content"
+		},
+		"content_margin":
+		{
+			"label": "Margin Top",
+			"description": "Set the top margin.",
+			"type": "select",
+			"default": "",
+			"options":
+			{
+				"Small": "small",
+				"Default": "",
+				"Medium": "medium",
+				"Large": "large",
+				"X-Large": "xlarge",
+				"None": "remove"
+			},
+			"enable": "show_content"
+		},
+		"image_width":
+		{
+			"attrs":
+			{
+				"placeholder": "auto"
+			},
+			"enable": "show_image"
+		},
+		"image_height":
+		{
+			"attrs":
+			{
+				"placeholder": "auto"
+			},
+			"enable": "show_image"
+		},
+		"image_card":
+		{
+			"label": "Padding",
+			"description": "Top, left or right aligned images can be attached to the card's edge. If the image is aligned to the left or right, it will also extend to cover the whole space.",
+			"type": "checkbox",
+			"text": "Align image without padding",
+			"enable": "show_image && panel_style && image_align != 'between'"
+		},
+		"image_border":
+		{
+			"label": "Border",
+			"description": "Select the image's border style.",
+			"type": "select",
+			"default": "",
+			"options":
+			{
+				"None": "",
+				"Rounded": "rounded",
+				"Circle": "circle",
+				"Pill": "pill"
+			},
+			"enable": "show_image && (!panel_style || (panel_style && (!image_card || image_align == 'between')"
+		},
+		"image_box_shadow":
+		{
+			"label": "Box Shadow",
+			"description": "Select the image's box shadow size.",
+			"type": "select",
+			"default": "",
+			"options":
+			{
+				"None": "",
+				"Small": "small",
+				"Medium": "medium",
+				"Large": "large",
+				"X-Large": "xlarge"
+			},
+			"enable": "show_image && !panel_style"
+		},
+		"image_hover_box_shadow":
+		{
+			"label": "Hover Box Shadow",
+			"description": "Select the image's box shadow size on hover.",
+			"type": "select",
+			"default": "",
+			"options":
+			{
+				"None": "",
+				"Small": "small",
+				"Medium": "medium",
+				"Large": "large",
+				"X-Large": "xlarge"
+			},
+			"enable": "show_link && show_image && !panel_style && link_style == 'panel'"
+		},
+		"image_box_decoration":
+		{
+			"label": "Box Decoration",
+			"description": "Select the image's box decoration style. Note: The Mask option is not supported by all styles and may have no visible effect.",
+			"type": "select",
+			"default": "",
+			"options":
+			{
+				"None": "",
+				"Default": "default",
+				"Primary": "primary",
+				"Secondary": "secondary",
+				"Floating Shadow": "shadow",
+				"Mask": "mask"
+			},
+			"enable": "show_image && !panel_style"
+		},
+		"image_box_decoration_inverse":
+		{
+			"type": "checkbox",
+			"text": "Inverse style",
+			"enable": "show_image && !panel_style && $match(image_box_decoration, '^(default|primary|secondary)$')"
+		},
+		"image_thumbnail":
+		{
+			"label": "Image Thumbnail",
+			"description": "Use the image as thumbnail instead of the icon.",
+			"type": "checkbox",
+			"text": "Use image",
+			"enable": "show_image"
+		},
+		"image_thumbnail_width":
+		{
+			"attrs":
+			{
+				"placeholder": "auto"
+			},
+			"enable": "image_thumbnail"
+		},
+		"image_thumbnail_height":
+		{
+			"attrs":
+			{
+				"placeholder": "auto"
+			},
+			"enable": "image_thumbnail"
+		},
+		"icon_ratio":
+		{
+			"label": "Icon Size",
+			"description": "Enter a size ratio, if you want the icon to appear larger than the default font size, for example 1.5 or 2 to double the size.",
+			"attrs":
+			{
+				"placeholder": "1"
+			},
+			"enable": "show_image && !image_thumbnail"
+		},
+		"icon_color":
+		{
+			"label": "Icon Color",
+			"description": "Set the icon color.",
+			"type": "select",
+			"default": "",
+			"options":
+			{
+				"Default": "",
+				"Muted": "muted",
+				"Emphasis": "emphasis",
+				"Primary": "primary",
+				"Success": "success",
+				"Warning": "warning",
+				"Danger": "danger"
+			},
+			"enable": "show_image && !image_thumbnail"
+		},
+		"image_align":
+		{
+			"label": "Alignment",
+			"description": "Align the image to the top, left, right or place it between the title and the content.",
+			"type": "select",
+			"options":
+			{
+				"Top": "top",
+				"Bottom": "bottom",
+				"Left": "left",
+				"Right": "right",
+				"Between": "between"
+			},
+			"enable": "show_image"
+		},
+		"image_grid_width":
+		{
+			"label": "Grid Width",
+			"description": "Define the width of the image within the grid. Choose between percent and fixed widths or expand columns to the width of their content.",
+			"type": "select",
+			"options":
+			{
+				"Auto": "auto",
+				"50%": "1-2",
+				"33%": "1-3",
+				"25%": "1-4",
+				"20%": "1-5",
+				"Small": "small",
+				"Medium": "medium",
+				"Large": "large",
+				"X-Large": "xlarge",
+				"XX-Large": "xxlarge"
+			},
+			"enable": "show_image && (image_align == 'left' || image_align == 'right')"
+		},
+		"image_gutter":
+		{
+			"label": "Grid Gutter",
+			"description": "Select the gutter width between the image and content items.",
+			"type": "select",
+			"default": "",
+			"options":
+			{
+				"Small": "small",
+				"Medium": "medium",
+				"Default": "",
+				"Large": "large",
+				"Collapse": "collapse"
+			},
+			"enable": "show_image && (image_align == 'left' || image_align == 'right') && !(image_card && panel_style)"
+		},
+		"image_margin":
+		{
+			"label": "Margin Top",
+			"description": "Set the top margin.",
+			"type": "select",
+			"default": "",
+			"options":
+			{
+				"Small": "small",
+				"Default": "",
+				"Medium": "medium",
+				"Large": "large",
+				"X-Large": "xlarge",
+				"None": "remove"
+			},
+			"enable": "show_image && (image_align == 'between' || image_align == 'bottom' && !image_card)"
+		},
+		"image_svg_inline":
+		{
+			"label": "Inline SVG",
+			"description": "Inject SVG images into the page markup, so that they can easily be styled with CSS.",
+			"type": "checkbox",
+			"text": "Make SVG stylable with CSS",
+			"enable": "show_image"
+		},
+		"image_svg_animate":
+		{
+			"type": "checkbox",
+			"text": "Animate strokes",
+			"enable": "show_image && image_svg_inline"
+		},
+		"image_svg_color":
+		{
+			"label": "SVG Color",
+			"description": "Select the SVG color. It will only apply to supported elements defined in the SVG.",
+			"type": "select",
+			"options":
+			{
+				"Inherit": "",
+				"Muted": "muted",
+				"Emphasis": "emphasis",
+				"Primary": "primary",
+				"Secondary": "secondary",
+				"Success": "success",
+				"Warning": "warning",
+				"Danger": "danger"
+			},
+			"enable": "show_image && image_svg_inline"
+		},
+		"link_text":
+		{
+			"label": "Text",
+			"description": "Enter the text for the link.",
+			"enable": "show_link"
+		},
+		"link_target":
+		{
+			"type": "checkbox",
+			"text": "Open in a new window",
+			"enable": "show_link"
+		},
+		"link_style":
+		{
+			"label": "Style",
+			"description": "Set the link style.",
+			"type": "select",
+			"options":
+			{
+				"Link": "",
+				"Link Muted": "link-muted",
+				"Link Text": "link-text",
+				"Button Default": "default",
+				"Button Primary": "primary",
+				"Button Secondary": "secondary",
+				"Button Danger": "danger",
+				"Button Text": "text",
+				"Image/Card": "panel"
+			},
+			"enable": "show_link"
+		},
+		"link_size":
+		{
+			"label": "Button Size",
+			"description": "Set the button size.",
+			"type": "select",
+			"default": "",
+			"options":
+			{
+				"Small": "small",
+				"Default": "",
+				"Large": "large"
+			},
+			"enable": "show_link && link_style && link_style != 'link-muted' && link_style != 'link-text' && link_style != 'panel'"
+		},
+		"link_margin":
+		{
+			"label": "Margin Top",
+			"description": "Set the top margin.",
+			"type": "select",
+			"default": "",
+			"options":
+			{
+				"Small": "small",
+				"Default": "",
+				"Medium": "medium",
+				"Large": "large",
+				"X-Large": "xlarge",
+				"None": "remove"
+			},
+			"enable": "show_link && link_style != 'panel'"
+		},
+		"text_align": "${builder:text_align_justify}",
+		"text_align_breakpoint": "${builder:text_align_breakpoint}",
+		"text_align_fallback": "${builder:text_align_justify_fallback}",
+		"maxwidth": "${builder:maxwidth}",
+		"maxwidth_align": "${builder:maxwidth_align}",
+		"maxwidth_breakpoint": "${builder:maxwidth_breakpoint}",
+		"margin": "${builder:margin}",
+		"margin_remove_top": "${builder:margin_remove_top}",
+		"margin_remove_bottom": "${builder:margin_remove_bottom}",
+		"item_animation": "${builder:animation}",
+		"_parallax_button": "${builder:_parallax_button}",
+		"visibility": "${builder:visibility}",
+		"name": "${builder:name}",
+		"status": "${builder:status}",
+		"id": "${builder:id}",
+		"class": "${builder:cls}",
+		"css":
+		{
+			"label": "CSS",
+			"description": "Enter your own custom CSS. The following selectors will be prefixed automatically for this element: <code>.el-element</code>, <code>.el-item</code>, <code>.el-title</code>, <code>.el-meta</code>, <code>.el-content</code>, <code>.el-image</code>, <code>.el-link</code>",
+			"type": "editor",
+			"editor": "code",
+			"mode": "css",
+			"attrs":
+			{
+				"debounce": 500
+			}
+		}
+	},
+	"fieldset":
+	{
+		"default":
+		{
+			"type": "tabs",
+			"fields": [
+				{
+					"title": "Content",
+					"fields": [
+						"content",
+						"show_title",
+						"show_meta",
+						"show_image",
+						"show_content",
+						"show_link"
+					]
+				},
+				{
+					"title": "Settings",
+					"fields": [
+					{
+						"label": "Alignment",
+						"type": "group",
+						"divider": true,
+						"fields": [
+							"align_default",
+							"align_small",
+							"align_medium",
+							"align_large",
+							"align_xlarge"
+						]
+					},
+					{
+						"label": "Panel",
+						"type": "group",
+						"divider": true,
+						"fields": [
+							"panel_style",
+							"panel_size",
+							"item_maxwidth"
+						]
+					},
+					{
+						"label": "Title",
+						"type": "group",
+						"divider": true,
+						"fields": [
+							"title_style",
+							"title_decoration",
+							"title_color",
+							"title_element",
+							"title_margin"
+						]
+					},
+					{
+						"label": "Meta",
+						"type": "group",
+						"divider": true,
+						"fields": [
+							"meta_style",
+							"meta_color",
+							"meta_align",
+							"meta_margin"
+						]
+					},
+					{
+						"label": "Content",
+						"type": "group",
+						"divider": true,
+						"fields": [
+							"content_style",
+							"content_margin"
+						]
+					},
+					{
+						"label": "Image",
+						"type": "group",
+						"divider": true,
+						"fields": [
+							{
+								"label": "Width/Height",
+								"description": "Setting just one value preserves the original proportions. The image will be resized and cropped automatically, and where possible, high resolution images will be auto-generated.",
+								"type": "grid",
+								"width": "1-2",
+								"fields": [
+									"image_width",
+									"image_height"
+								]
+							},
+							"image_card",
+							"image_border",
+							"image_box_shadow",
+							"image_hover_box_shadow",
+							"image_box_decoration",
+							"image_box_decoration_inverse",
+							"image_thumbnail",
+							{
+								"label": "Thumbnail Width/Height",
+								"description": "Setting just one value preserves the original proportions. The image thumbnail will be resized and cropped automatically, and where possible, high resolution images will be auto-generated.",
+								"type": "grid",
+								"width": "1-2",
+								"fields": [
+									"image_thumbnail_width",
+									"image_thumbnail_height"
+								]
+							},
+							"icon_ratio",
+							"icon_color",
+							"image_align",
+							"image_grid_width",
+							"image_gutter",
+							"image_breakpoint",
+							"image_vertical_align",
+							"image_margin",
+							"image_svg_inline",
+							"image_svg_animate",
+							"image_svg_color"
+						]
+					},
+					{
+						"label": "Link",
+						"type": "group",
+						"divider": true,
+						"fields": [
+							"link_text",
+							"link_target",
+							"link_style",
+							"link_size",
+							"link_margin"
+						]
+					},
+					{
+						"label": "General",
+						"type": "group",
+						"fields": [
+							"text_align",
+							"text_align_breakpoint",
+							"text_align_fallback",
+							"maxwidth",
+							"maxwidth_align",
+							"maxwidth_breakpoint",
+							"margin",
+							"margin_remove_top",
+							"margin_remove_bottom",
+							"item_animation",
+							"_parallax_button",
+							"visibility"
+						]
+					}]
+				},
+				"${builder:advanced}"
+			]
+		}
+	}
+}

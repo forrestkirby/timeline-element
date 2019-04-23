@@ -1,0 +1,27 @@
+/* Timeline CSS */
+
+.timeline-container {
+	position: relative;
+}
+
+.timeline-container::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	height: 100%;
+	width: 4px;
+	background-color: rgba(0, 0, 0, 0.1);
+}
+
+.timeline-container-left::before {
+	left: 0;
+}
+
+.timeline-container-right::before {
+	right: 0;
+}
+
+.timeline-container-alternate::before {
+	left: 50%;
+	transform: translateX(-50%);
+}
