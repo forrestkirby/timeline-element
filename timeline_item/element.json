@@ -1,7 +1,7 @@
 {
 	"name": "timeline_item",
 	"title": "Item",
-	"width": 600,
+	"width": 500,
 	"placeholder":
 	{
 		"props":
@@ -33,7 +33,11 @@
 			"label": "Content",
 			"type": "editor"
 		},
-		"image": "${builder:image}",
+		"image":
+		{
+			"label": "Image",
+			"type": "image"
+		},
 		"image_alt":
 		{
 			"label": "Image Alt",
@@ -42,9 +46,7 @@
 		"icon":
 		{
 			"label": "Icon",
-			"description": "Instead of using a custom image, you can click on the pencil to pick an icon from the icon library.",
-			"type": "icon",
-			"enable": ""
+			"type": "icon"
 		},
 		"link": "${builder:link}"
 	},
@@ -59,8 +61,7 @@
 				"image",
 				"image_alt",
 				"icon",
-				"link",
-				"tags"
+				"link"
 			]
 		}
 	}

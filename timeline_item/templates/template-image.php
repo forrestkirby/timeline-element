@@ -33,23 +33,4 @@ if ($props['image']) {
 		]);
 	}
 
-// Icon
-} elseif ($props['icon']) {
-
-	$icon = $this->el('span', [
-
-		'class' => [
-			'el-image',
-			'uk-text-{icon_color}',
-			'uk-margin[-{image_margin}]-top {@!image_margin: remove} {@image_align: between}',
-		],
-
-		'uk-icon' => [
-			'icon: {0};' => $props['icon'],
-			'ratio: {icon_ratio};',
-		],
-
-	]);
-
-	echo $icon($element, '');
 }

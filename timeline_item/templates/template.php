@@ -35,12 +35,16 @@ if ($element['image_box_decoration']) {
 	$props['image'] = $decoration($element, $props['image']);
 }
 
+// Icon
+$props['icon'] = $this->render("{$__dir}/template-icon", compact('props'));
+
 // Panel/Card
 $el = $this->el('div', [
 
 	'class' => [
 		'el-item',
 		'uk-margin[-{item_margin}]-top',
+		'uk-margin-medium-left',
 		'uk-margin-auto uk-width-{item_maxwidth}',
 		'uk-panel {@!panel_style}',
 		'uk-card uk-{panel_style} [uk-card-{panel_size}]',
@@ -69,6 +73,7 @@ $cell_image = $this->el('div', [
 	'class' => [
 		'uk-width-{image_grid_width}[@{image_breakpoint}]',
 		'uk-flex-last[@{image_breakpoint}] {@image_align: right}',
+		'uk-padding-remove-left',
 	],
 
 ]);
@@ -100,6 +105,8 @@ if ($props['link'] && $element['link_style'] == 'panel' && !$element['panel_styl
 }
 
 ?>
+
+<?= $props['icon'] ?>
 
 <?= $el($element, $attrs); ?>
 
