@@ -27,6 +27,8 @@ along with this program. If not, see <https://www.gnu.org/licenses/>.
 
 ## Issues
 
+Note that this element is still in the works, so some features like icon size or switching icon and image are not working properly yet.
+
 Please report issues using the [Github Issue tool](../../issues).
 
 ## About
