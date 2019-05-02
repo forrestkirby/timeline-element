@@ -184,7 +184,7 @@
 			"label": "Icon Background Color",
 			"description": "Set the background color for the icons.",
 			"type": "color",
-			"default": "rgba(0, 0, 0, 0.1)"
+			"default": "rgba(255, 255, 255, 1)"
 		},
 		"item_margin":
 		{
