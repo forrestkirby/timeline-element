@@ -1,6 +1,6 @@
 # Timeline Element
 
-A custom element for the YOOtheme Pro Page Builder based on the Grid element.
+A custom element for the YOOtheme Pro Page Builder based on the grid element.
 
 Copyright (C) 2007-2018 YOOtheme GmbH yootheme.com, 2018 forrestkirby github.com/forrestkirby
 
