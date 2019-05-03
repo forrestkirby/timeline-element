@@ -8,8 +8,6 @@ if ($props['icon']) {
 		'class' => [
 			'el-icon',
 			'uk-text-{icon_color}',
-			'uk-background-{icon_background}',
-			'uk-margin[-{image_margin}]-top {@!image_margin: remove} {@image_align: between}',
 		],
 
 		'uk-icon' => [
@@ -25,4 +23,24 @@ if ($props['icon']) {
 	]);
 
 	echo $icon($element, '');
+
+} else {
+
+	$icon = $this->el('span', [
+
+		'class' => [
+			'el-icon',
+			'timeline-icon-default',
+			'uk-text-{icon_color}',
+		],
+
+		'style' => [
+			'background-color: {icon_background};',
+			'border-color: {icon_border};',
+		],
+
+	]);
+
+	echo $icon($element, '');
+
 }
