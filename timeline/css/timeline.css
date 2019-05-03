@@ -113,6 +113,12 @@
 	left: calc(50% - var(--timeline-icon-size) - var(--timeline-line-width));
 }
 
+.timeline-icon-default {
+	height: 20px;
+	width: 20px;
+	margin-left: 30px;
+}
+
 @media (min-width: 640px) {
 	.timeline-align-right\@s >.timeline-line {
 		left: calc(var(--timeline-icon-size) / 2 + var(--timeline-line-width));
