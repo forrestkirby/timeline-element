@@ -49,6 +49,8 @@ While developing custom elements it might appear to you that changes to the code
 
 ## Screenshots
 
-![Image](https://pionte.ch/yootheme/max/images/tutorial-timeline-1.jpg)
-
 ![Image](https://pionte.ch/yootheme/max/images/tutorial-timeline-2.jpg)
+
+![Image](https://pionte.ch/yootheme/max/images/tutorial-timeline-3.jpg)
+
+![Image](https://pionte.ch/yootheme/max/images/tutorial-timeline-4.jpg)
