@@ -98,6 +98,43 @@
 			"type": "checkbox",
 			"text": "Show the link"
 		},
+		"line_color":
+		{
+			"label": "Line Color",
+			"description": "Set the color for the timeline.",
+			"type": "color",
+			"default": "rgba(0, 0, 0, 0.1)"
+		},
+		"icon_background":
+		{
+			"label": "Icon Background Color",
+			"description": "Set the background color for the icons.",
+			"type": "color",
+			"default": "rgba(255, 255, 255, 1)"
+		},
+		"icon_border":
+		{
+			"label": "Icon Background Color",
+			"description": "Set the background color for the icons.",
+			"type": "color",
+			"default": "rgba(255, 255, 255, 0.1)"
+		},
+		"item_margin":
+		{
+			"label": "Item Margin Top",
+			"description": "Set the top margin for the items.",
+			"type": "select",
+			"default": "",
+			"options":
+			{
+				"Small": "small",
+				"Default": "",
+				"Medium": "medium",
+				"Large": "large",
+				"X-Large": "xlarge",
+				"None": "remove"
+			}
+		},
 		"align_default":
 		{
 			"label": "Phone Portrait",
@@ -170,36 +207,6 @@
 				"Right": "right",
 				"Left Alternate": "left-alternate",
 				"Right Alternate": "right-alternate"
-			}
-		},
-		"line_color":
-		{
-			"label": "Line Color",
-			"description": "Set the color for the timeline.",
-			"type": "color",
-			"default": "rgba(0, 0, 0, 0.1)"
-		},
-		"icon_background":
-		{
-			"label": "Icon Background Color",
-			"description": "Set the background color for the icons.",
-			"type": "color",
-			"default": "rgba(255, 255, 255, 1)"
-		},
-		"item_margin":
-		{
-			"label": "Margin Top",
-			"description": "Set the top margin.",
-			"type": "select",
-			"default": "",
-			"options":
-			{
-				"Small": "small",
-				"Default": "",
-				"Medium": "medium",
-				"Large": "large",
-				"X-Large": "xlarge",
-				"None": "remove"
 			}
 		},
 		"panel_style":
@@ -806,12 +813,20 @@
 					"title": "Settings",
 					"fields": [
 						{
-							"label": "Timeline",
+							"label": "Colors",
 							"type": "group",
 							"divider": true,
 							"fields": [
 								"line_color",
 								"icon_background",
+								"icon_border"
+							]
+						},
+						{
+							"label": "Item Alignment",
+							"type": "group",
+							"divider": true,
+							"fields": [
 								"item_margin",
 								"align_default",
 								"align_small",
