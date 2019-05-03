@@ -2,7 +2,7 @@
 
 A custom element for the YOOtheme Pro Page Builder based on the grid element.
 
-Copyright (C) 2007-2018 YOOtheme GmbH yootheme.com, 2018 forrestkirby github.com/forrestkirby
+Copyright (C) 2007-2019 YOOtheme GmbH yootheme.com, 2019 forrestkirby github.com/forrestkirby
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -21,8 +21,7 @@ along with this program. If not, see <https://www.gnu.org/licenses/>.
 
 - download and unzip the element package
 - create a [Child Theme](https://yootheme.com/support/yootheme-pro/joomla/child-themes) in your YOOtheme Pro installation and activate the child theme
-- copy all files into the directory `/templates/yootheme_child/builder/` (Joomla!) or `/wp-content/themes/yootheme-child/builder/` (WordPress) of your installation whereas *child* must be the name of your child theme
-- WordPress only: edit the file `element.json` and change the appearances of `{+$theme}\_child` to `{+$theme}-child`, else the icons will not be displayed
+- copy all files into the directory `/templates/yootheme_child/builder/` (Joomla!) or `/wp-content/themes/yootheme-child/builder/` (WordPress) of your installation while *child* must be the name of your child theme
 - access the YOOtheme Pro Page Builder, the custom elements should now be available
 
 ## Issues
