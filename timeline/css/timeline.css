@@ -108,7 +108,7 @@
 
 .timeline-align-right-alternate>div>.el-icon,
 .timeline-align-left-alternate>div>.el-icon {
-	left: calc(50% - var(--timeline-icon-size) * 1);
+	left: calc(50% - var(--timeline-icon-size) - var(--timeline-line-width));
 }
 
 @media (min-width: 640px) {
@@ -183,7 +183,7 @@
 
 	.timeline-align-right-alternate\@s>div>.el-icon,
 	.timeline-align-left-alternate\@s>div>.el-icon {
-		left: calc(50% - var(--timeline-icon-size) * 1);
+		left: calc(50% - var(--timeline-icon-size) - var(--timeline-line-width));
 	}
 }
 
@@ -260,7 +260,7 @@
 
 	.timeline-align-right-alternate\@m>div>.el-icon,
 	.timeline-align-left-alternate\@m>div>.el-icon {
-		left: calc(50% - var(--timeline-icon-size) * 1);
+		left: calc(50% - var(--timeline-icon-size) - var(--timeline-line-width));
 	}
 }
 
@@ -337,7 +337,7 @@
 
 	.timeline-align-right-alternate\@l>div>.el-icon,
 	.timeline-align-left-alternate\@l>div>.el-icon {
-		left: calc(50% - var(--timeline-icon-size) * 1);
+		left: calc(50% - var(--timeline-icon-size) - var(--timeline-line-width));
 	}
 }
 
@@ -414,6 +414,6 @@
 
 	.timeline-align-right-alternate\@xl>div>.el-icon,
 	.timeline-align-left-alternate\@xl>div>.el-icon {
-		left: calc(50% - var(--timeline-icon-size) * 1);
+		left: calc(50% - var(--timeline-icon-size) - var(--timeline-line-width));
 	}
 }
