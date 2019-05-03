@@ -19,6 +19,7 @@ if ($props['icon']) {
 
 		'style' => [
 			'background-color: {icon_background}',
+			'border-color: {icon_border}',
 		],
 
 	]);
