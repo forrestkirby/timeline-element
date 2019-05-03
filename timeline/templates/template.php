@@ -21,7 +21,6 @@ $line = $this->el('div', [
 
 	'style' => [
 		'background-color: {line_color};',
-		'border-color: {icon_border};',
 	],
 
 ]);
