@@ -36,7 +36,7 @@
 }
 
 .timeline-align-right>.timeline-line {
-	left: calc(var(--timeline-icon-size)  / 2 + var(--timeline-line-width));
+	left: calc(var(--timeline-icon-size) / 2 + var(--timeline-line-width));
 }
 
 .timeline-align-left>.timeline-line {
@@ -115,7 +115,7 @@
 
 @media (min-width: 640px) {
 	.timeline-align-right\@s >.timeline-line {
-		left: calc(var(--timeline-icon-size)  / 2 + var(--timeline-line-width));
+		left: calc(var(--timeline-icon-size) / 2 + var(--timeline-line-width));
 	}
 
 	.timeline-align-left\@s >.timeline-line {
@@ -192,7 +192,7 @@
 @media (min-width: 960px) {
 
 	.timeline-align-right\@m >.timeline-line {
-		left: calc(var(--timeline-icon-size)  / 2 + var(--timeline-line-width));
+		left: calc(var(--timeline-icon-size) / 2 + var(--timeline-line-width));
 	}
 
 	.timeline-align-left\@m >.timeline-line {
@@ -269,7 +269,7 @@
 @media (min-width: 1200px) {
 
 	.timeline-align-right\@l >.timeline-line {
-		left: calc(var(--timeline-icon-size)  / 2 + var(--timeline-line-width));
+		left: calc(var(--timeline-icon-size) / 2 + var(--timeline-line-width));
 	}
 
 	.timeline-align-left\@l >.timeline-line {
@@ -346,7 +346,7 @@
 @media (min-width: 1600px) {
 
 	.timeline-align-right\@xl >.timeline-line {
-		left: calc(var(--timeline-icon-size)  / 2 + var(--timeline-line-width));
+		left: calc(var(--timeline-icon-size) / 2 + var(--timeline-line-width));
 	}
 
 	.timeline-align-left\@xl >.timeline-line {

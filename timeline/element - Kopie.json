@@ -527,6 +527,40 @@
 			"text": "Inverse style",
 			"enable": "show_image && !panel_style && $match(image_box_decoration, '^(default|primary|secondary)$')"
 		},
+		"image_thumbnail":
+		{
+			"label": "Image Thumbnail",
+			"description": "Use the image as thumbnail instead of the icon.",
+			"type": "checkbox",
+			"text": "Use image",
+			"enable": "show_image"
+		},
+		"image_thumbnail_width":
+		{
+			"attrs":
+			{
+				"placeholder": "auto"
+			},
+			"enable": "image_thumbnail"
+		},
+		"image_thumbnail_height":
+		{
+			"attrs":
+			{
+				"placeholder": "auto"
+			},
+			"enable": "image_thumbnail"
+		},
+		"icon_ratio":
+		{
+			"label": "Icon Size",
+			"description": "Enter a size ratio, if you want the icon to appear larger than the default font size, for example 1.5 or 2 to double the size.",
+			"attrs":
+			{
+				"placeholder": "1"
+			},
+			"enable": "show_image && !image_thumbnail"
+		},
 		"icon_color":
 		{
 			"label": "Icon Color",
@@ -864,6 +898,18 @@
 								"image_hover_box_shadow",
 								"image_box_decoration",
 								"image_box_decoration_inverse",
+								"image_thumbnail",
+								{
+									"label": "Thumbnail Width/Height",
+									"description": "Setting just one value preserves the original proportions. The image thumbnail will be resized and cropped automatically, and where possible, high resolution images will be auto-generated.",
+									"type": "grid",
+									"width": "1-2",
+									"fields": [
+										"image_thumbnail_width",
+										"image_thumbnail_height"
+									]
+								},
+								"icon_ratio",
 								"icon_color",
 								"image_align",
 								"image_grid_width",
