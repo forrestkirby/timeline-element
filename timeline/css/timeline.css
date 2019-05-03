@@ -30,7 +30,7 @@
 	left: 50%;
 	transform: translate(-50%, 100%);
 	border-color: inherit;
-	border-width: var(--timeline-line-width;
+	border-width: var(--timeline-line-width);
 	border-style: solid;
 	border-radius: 50%;
 }
