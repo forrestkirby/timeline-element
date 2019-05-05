@@ -26,17 +26,13 @@ along with this program. If not, see <https://www.gnu.org/licenses/>.
 
 ## Issues
 
-Note that this element is still in the works, so some features like icon size or switching icon and image are not working properly yet.
-
 Please report issues using the [Github Issue tool](../../issues).
+
+- doesn’t work with YOOtheme Pro 1.20 beta yet
 
 ## About
 
-Toggle Element is a custom element for YOOtheme Pro developed by [YOOtheme](https://yootheme.com).
-
-## Hints
-
-While developing custom elements it might appear to you that changes to the code do not come into effect. If that is the case, try to force a browser refresh while within the Page Builder using \[Ctrl+F5\] (Windows) or \[Cmd+R\] (macOS).
+Timeline Element is a custom element for YOOtheme Pro developed by [YOOtheme](https://yootheme.com).
 
 ## Links
 
