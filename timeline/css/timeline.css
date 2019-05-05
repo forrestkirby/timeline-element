@@ -18,7 +18,6 @@
 	width: var(--timeline-line-width);
 	background-color: var(--timeline-line-color);
 	border-color: var(--timeline-line-color);
-	background-color: inherit;
 	border-style: none;
 }
 
