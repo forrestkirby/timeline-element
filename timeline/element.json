@@ -114,8 +114,8 @@
 		},
 		"icon_border":
 		{
-			"label": "Icon Background Color",
-			"description": "Set the background color for the icons.",
+			"label": "Icon Border Color",
+			"description": "Set the border color for the icons.",
 			"type": "color",
 			"default": "rgba(0, 0, 0, 0.1)"
 		},
