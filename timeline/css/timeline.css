@@ -34,7 +34,7 @@
 }
 
 .timeline-align-right>.timeline-line {
-	left: calc(var(--timeline-icon-size) / 2 + var(--timeline-line-width));
+	left: calc(var(--timeline-icon-size) + var(--timeline-line-width) / 2);
 }
 
 .timeline-align-left>.timeline-line {
@@ -98,7 +98,7 @@
 }
 
 .timeline-align-right>div>.el-icon {
-	left: calc(-1*(var(--timeline-icon-size) - var(--timeline-line-width)) * 0.5);
+	left: 0;
 }
 
 .timeline-align-left>div>.el-icon {
@@ -118,7 +118,7 @@
 
 @media (min-width: 640px) {
 	.timeline-align-right\@s >.timeline-line {
-		left: calc(var(--timeline-icon-size) / 2 + var(--timeline-line-width));
+		left: calc(var(--timeline-icon-size) + var(--timeline-line-width) / 2);
 	}
 
 	.timeline-align-left\@s >.timeline-line {
@@ -179,7 +179,7 @@
 	}
 
 	.timeline-align-right\@s>div>.el-icon {
-		left: calc(-1*(var(--timeline-icon-size) - var(--timeline-line-width)) * 0.5);
+		left: 0;
 	}
 
 	.timeline-align-left\@s>div>.el-icon {
@@ -195,7 +195,7 @@
 @media (min-width: 960px) {
 
 	.timeline-align-right\@m >.timeline-line {
-		left: calc(var(--timeline-icon-size) / 2 + var(--timeline-line-width));
+		left: calc(var(--timeline-icon-size) + var(--timeline-line-width) / 2);
 	}
 
 	.timeline-align-left\@m >.timeline-line {
@@ -256,7 +256,7 @@
 	}
 
 	.timeline-align-right\@m>div>.el-icon {
-		left: calc(-1*(var(--timeline-icon-size) - var(--timeline-line-width)) * 0.5);
+		left: 0;
 	}
 
 	.timeline-align-left\@m>div>.el-icon {
@@ -272,7 +272,7 @@
 @media (min-width: 1200px) {
 
 	.timeline-align-right\@l >.timeline-line {
-		left: calc(var(--timeline-icon-size) / 2 + var(--timeline-line-width));
+		left: calc(var(--timeline-icon-size) + var(--timeline-line-width) / 2);
 	}
 
 	.timeline-align-left\@l >.timeline-line {
@@ -333,7 +333,7 @@
 	}
 
 	.timeline-align-right\@l>div>.el-icon {
-		left: calc(-1*(var(--timeline-icon-size) - var(--timeline-line-width)) * 0.5);
+		left: 0;
 	}
 
 	.timeline-align-left\@l>div>.el-icon {
@@ -349,7 +349,7 @@
 @media (min-width: 1600px) {
 
 	.timeline-align-right\@xl >.timeline-line {
-		left: calc(var(--timeline-icon-size) / 2 + var(--timeline-line-width));
+		left: calc(var(--timeline-icon-size) + var(--timeline-line-width) / 2);
 	}
 
 	.timeline-align-left\@xl >.timeline-line {
@@ -410,7 +410,7 @@
 	}
 
 	.timeline-align-right\@xl>div>.el-icon {
-		left: calc(-1*(var(--timeline-icon-size) - var(--timeline-line-width)) * 0.5);
+		left: 0;
 	}
 
 	.timeline-align-left\@xl>div>.el-icon {
