@@ -30,6 +30,18 @@ Please report issues using the [Github Issue tool](../../issues).
 
 - doesn’t work with YOOtheme Pro 1.20 beta yet
 
+## To-do
+
+- set icon ratio
+- set icon ratio per item
+- use image instead of icon
+- use image instead of icon per item
+- set text align per item
+- set item alignment per item
+- use breakpoints of style customizer (might require usage of LESS)
+- allow masonry effect / overlap of items for alternate item alignment to reduce empty areas
+- optimize CSS
+
 ## About
 
 Timeline Element is a custom element for YOOtheme Pro developed by [YOOtheme](https://yootheme.com).
