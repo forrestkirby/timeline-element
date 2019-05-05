@@ -50,7 +50,7 @@
 .timeline-align-right>div>.el-item {
 	width: auto;
 	left: 0;
-	padding-left: var(--timeline-icon-size);
+	padding-left: calc(var(--timeline-icon-size) * 2);
 	padding-right: 0;
 }
 
@@ -64,7 +64,7 @@
 .timeline-align-right-alternate>div:nth-child(even)>.el-item {
 	width: calc(50% - var(--timeline-icon-size));
 	left: 50%;
-	padding-left: var(--timeline-icon-size);
+	padding-left: calc(var(--timeline-icon-size) * 2);
 	padding-right: 0;
 }
 
@@ -85,7 +85,7 @@
 .timeline-align-left-alternate>div:nth-child(odd)>.el-item {
 	width: calc(50% - var(--timeline-icon-size));
 	left: 50%;
-	padding-left: var(--timeline-icon-size);
+	padding-left: calc(var(--timeline-icon-size) * 2);
 	padding-right: 0;
 }
 
@@ -139,7 +139,7 @@
 	.timeline-align-right\@s>div>.el-item {
 		width: auto;
 		left: 0;
-		padding-left: var(--timeline-icon-size);
+		padding-left: calc(var(--timeline-icon-size) * 2);
 		padding-right: 0;
 	}
 
@@ -153,7 +153,7 @@
 	.timeline-align-right-alternate\@s >div:nth-child(even)>.el-item {
 		width: calc(50% - var(--timeline-icon-size));
 		left: 50%;
-		padding-left: var(--timeline-icon-size);
+		padding-left: calc(var(--timeline-icon-size) * 2);
 		padding-right: 0;
 	}
 
@@ -174,7 +174,7 @@
 	.timeline-align-left-alternate\@s >div:nth-child(odd)>.el-item {
 		width: calc(50% - var(--timeline-icon-size));
 		left: 50%;
-		padding-left: var(--timeline-icon-size);
+		padding-left: calc(var(--timeline-icon-size) * 2);
 		padding-right: 0;
 	}
 
@@ -216,7 +216,7 @@
 	.timeline-align-right\@m>div>.el-item {
 		width: auto;
 		left: 0;
-		padding-left: var(--timeline-icon-size);
+		padding-left: calc(var(--timeline-icon-size) * 2);
 		padding-right: 0;
 	}
 
@@ -230,7 +230,7 @@
 	.timeline-align-right-alternate\@m >div:nth-child(even)>.el-item {
 		width: calc(50% - var(--timeline-icon-size));
 		left: 50%;
-		padding-left: var(--timeline-icon-size);
+		padding-left: calc(var(--timeline-icon-size) * 2);
 		padding-right: 0;
 	}
 
@@ -251,7 +251,7 @@
 	.timeline-align-left-alternate\@m >div:nth-child(odd)>.el-item {
 		width: calc(50% - var(--timeline-icon-size));
 		left: 50%;
-		padding-left: var(--timeline-icon-size);
+		padding-left: calc(var(--timeline-icon-size) * 2);
 		padding-right: 0;
 	}
 
@@ -293,7 +293,7 @@
 	.timeline-align-right\@l>div>.el-item {
 		width: auto;
 		left: 0;
-		padding-left: var(--timeline-icon-size);
+		padding-left: calc(var(--timeline-icon-size) * 2);
 		padding-right: 0;
 	}
 
@@ -307,7 +307,7 @@
 	.timeline-align-right-alternate\@l >div:nth-child(even)>.el-item {
 		width: calc(50% - var(--timeline-icon-size));
 		left: 50%;
-		padding-left: var(--timeline-icon-size);
+		padding-left: calc(var(--timeline-icon-size) * 2);
 		padding-right: 0;
 	}
 
@@ -328,7 +328,7 @@
 	.timeline-align-left-alternate\@l >div:nth-child(odd)>.el-item {
 		width: calc(50% - var(--timeline-icon-size));
 		left: 50%;
-		padding-left: var(--timeline-icon-size);
+		padding-left: calc(var(--timeline-icon-size) * 2);
 		padding-right: 0;
 	}
 
@@ -370,7 +370,7 @@
 	.timeline-align-right\@xl>div>.el-item {
 		width: auto;
 		left: 0;
-		padding-left: var(--timeline-icon-size);
+		padding-left: calc(var(--timeline-icon-size) * 2);
 		padding-right: 0;
 	}
 
@@ -384,7 +384,7 @@
 	.timeline-align-right-alternate\@xl >div:nth-child(even)>.el-item {
 		width: calc(50% - var(--timeline-icon-size));
 		left: 50%;
-		padding-left: var(--timeline-icon-size);
+		padding-left: calc(var(--timeline-icon-size) * 2);
 		padding-right: 0;
 	}
 
@@ -405,7 +405,7 @@
 	.timeline-align-left-alternate\@xl >div:nth-child(odd)>.el-item {
 		width: calc(50% - var(--timeline-icon-size));
 		left: 50%;
-		padding-left: var(--timeline-icon-size);
+		padding-left: calc(var(--timeline-icon-size) * 2);
 		padding-right: 0;
 	}
 
