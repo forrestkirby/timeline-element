@@ -28,6 +28,8 @@ along with this program. If not, see <https://www.gnu.org/licenses/>.
 
 Please report issues using the [Github Issue tool](../../issues).
 
+- doesn’t work with YOOtheme Pro 1.20 beta
+
 ## To-do
 
 - add position settings from YOOtheme Pro 1.20
