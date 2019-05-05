@@ -35,10 +35,12 @@
 
 .timeline-align-right>.timeline-line {
 	left: calc(var(--timeline-icon-size) + var(--timeline-line-width) / 2);
+	transform: none;
 }
 
 .timeline-align-left>.timeline-line {
 	left: calc(100% - var(--timeline-icon-size) - var(--timeline-line-width) / 2);
+	transform: none;
 }
 
 .timeline-align-right-alternate>.timeline-line,
@@ -47,14 +49,14 @@
 	transform: translateX(-50%);
 }
 
-.timeline-align-right>div>.el-item {
+.timeline-align-right>div:nth-child(n)>.el-item {
 	width: auto;
 	left: 0;
 	padding-left: calc(var(--timeline-icon-size) * 2);
 	padding-right: 0;
 }
 
-.timeline-align-left>div>.el-item {
+.timeline-align-left>div:nth-child(n)>.el-item {
 	width: auto;
 	left: 0;
 	padding-right: 80px;
@@ -113,16 +115,27 @@
 .timeline-icon-default {
 	height: 20px;
 	width: 20px;
+}
+
+.timeline-align-right>div>.timeline-icon-default,
+.timeline-align-left-alternate>div>.timeline-icon-default,
+.timeline-align-right-alternate>div>.timeline-icon-default {
 	margin-left: 30px;
+}
+
+.timeline-align-left>div>.timeline-icon-default {
+	margin-left: calc(30px - var(--timeline-line-width));
 }
 
 @media (min-width: 640px) {
 	.timeline-align-right\@s >.timeline-line {
 		left: calc(var(--timeline-icon-size) + var(--timeline-line-width) / 2);
+		transform: none;
 	}
 
 	.timeline-align-left\@s >.timeline-line {
 		left: calc(100% - var(--timeline-icon-size) - var(--timeline-line-width) / 2);
+		transform: none;
 	}
 
 	.timeline-align-right-alternate\@s >.timeline-line {
@@ -136,14 +149,14 @@
 	}
 
 
-	.timeline-align-right\@s>div>.el-item {
+	.timeline-align-right\@s>div:nth-child(n)>.el-item {
 		width: auto;
 		left: 0;
 		padding-left: calc(var(--timeline-icon-size) * 2);
 		padding-right: 0;
 	}
 
-	.timeline-align-left\@s>div>.el-item {
+	.timeline-align-left\@s>div:nth-child(n)>.el-item {
 		width: auto;
 		left: 0;
 		padding-right: 80px;
@@ -190,16 +203,28 @@
 	.timeline-align-left-alternate\@s>div>.el-icon {
 		left: calc(50% - var(--timeline-icon-size) - var(--timeline-line-width));
 	}
+
+	.timeline-align-right\@s>div>.timeline-icon-default,
+	.timeline-align-left-alternate\@s>div>.timeline-icon-default,
+	.timeline-align-right-alternate\@s>div>.timeline-icon-default {
+		margin-left: 30px;
+	}
+
+	.timeline-align-left\@s>div>.timeline-icon-default {
+		margin-left: calc(30px - var(--timeline-line-width));
+	}
 }
 
 @media (min-width: 960px) {
 
 	.timeline-align-right\@m >.timeline-line {
 		left: calc(var(--timeline-icon-size) + var(--timeline-line-width) / 2);
+		transform: none;
 	}
 
 	.timeline-align-left\@m >.timeline-line {
 		left: calc(100% - var(--timeline-icon-size) - var(--timeline-line-width) / 2);
+		transform: none;
 	}
 
 	.timeline-align-right-alternate\@m >.timeline-line {
@@ -213,14 +238,14 @@
 	}
 
 
-	.timeline-align-right\@m>div>.el-item {
+	.timeline-align-right\@m>div:nth-child(n)>.el-item {
 		width: auto;
 		left: 0;
 		padding-left: calc(var(--timeline-icon-size) * 2);
 		padding-right: 0;
 	}
 
-	.timeline-align-left\@m>div>.el-item {
+	.timeline-align-left\@m>div:nth-child(n)>.el-item {
 		width: auto;
 		left: 0;
 		padding-right: 80px;
@@ -267,16 +292,28 @@
 	.timeline-align-left-alternate\@m>div>.el-icon {
 		left: calc(50% - var(--timeline-icon-size) - var(--timeline-line-width));
 	}
+
+	.timeline-align-right\@m>div>.timeline-icon-default,
+	.timeline-align-left-alternate\@m>div>.timeline-icon-default,
+	.timeline-align-right-alternate\@m>div>.timeline-icon-default {
+		margin-left: 30px;
+	}
+
+	.timeline-align-left\@m>div>.timeline-icon-default {
+		margin-left: calc(30px - var(--timeline-line-width));
+	}
 }
 
 @media (min-width: 1200px) {
 
 	.timeline-align-right\@l >.timeline-line {
 		left: calc(var(--timeline-icon-size) + var(--timeline-line-width) / 2);
+		transform: none;
 	}
 
 	.timeline-align-left\@l >.timeline-line {
 		left: calc(100% - var(--timeline-icon-size) - var(--timeline-line-width) / 2);
+		transform: none;
 	}
 
 	.timeline-align-right-alternate\@l >.timeline-line {
@@ -290,14 +327,14 @@
 	}
 
 
-	.timeline-align-right\@l>div>.el-item {
+	.timeline-align-right\@l>div:nth-child(n)>.el-item {
 		width: auto;
 		left: 0;
 		padding-left: calc(var(--timeline-icon-size) * 2);
 		padding-right: 0;
 	}
 
-	.timeline-align-left\@l>div>.el-item {
+	.timeline-align-left\@l>div:nth-child(n)>.el-item {
 		width: auto;
 		left: 0;
 		padding-right: 80px;
@@ -344,16 +381,28 @@
 	.timeline-align-left-alternate\@l>div>.el-icon {
 		left: calc(50% - var(--timeline-icon-size) - var(--timeline-line-width));
 	}
+
+	.timeline-align-right\@l>div>.timeline-icon-default,
+	.timeline-align-left-alternate\@l>div>.timeline-icon-default,
+	.timeline-align-right-alternate\@l>div>.timeline-icon-default {
+		margin-left: 30px;
+	}
+
+	.timeline-align-left\@l>div>.timeline-icon-default {
+		margin-left: calc(30px - var(--timeline-line-width));
+	}
 }
 
 @media (min-width: 1600px) {
 
 	.timeline-align-right\@xl >.timeline-line {
 		left: calc(var(--timeline-icon-size) + var(--timeline-line-width) / 2);
+		transform: none;
 	}
 
 	.timeline-align-left\@xl >.timeline-line {
 		left: calc(100% - var(--timeline-icon-size) - var(--timeline-line-width) / 2);
+		transform: none;
 	}
 
 	.timeline-align-right-alternate\@xl >.timeline-line {
@@ -366,15 +415,14 @@
 		transform: translateX(-50%);
 	}
 
-
-	.timeline-align-right\@xl>div>.el-item {
+	.timeline-align-right\@xl>div:nth-child(n)>.el-item {
 		width: auto;
 		left: 0;
 		padding-left: calc(var(--timeline-icon-size) * 2);
 		padding-right: 0;
 	}
 
-	.timeline-align-left\@xl>div>.el-item {
+	.timeline-align-left\@xl>div:nth-child(n)>.el-item {
 		width: auto;
 		left: 0;
 		padding-right: 80px;
@@ -420,5 +468,15 @@
 	.timeline-align-right-alternate\@xl>div>.el-icon,
 	.timeline-align-left-alternate\@xl>div>.el-icon {
 		left: calc(50% - var(--timeline-icon-size) - var(--timeline-line-width));
+	}
+
+	.timeline-align-right\@xl>div>.timeline-icon-default,
+	.timeline-align-left-alternate\@xl>div>.timeline-icon-default,
+	.timeline-align-right-alternate\@xl>div>.timeline-icon-default {
+		margin-left: 30px;
+	}
+
+	.timeline-align-left\@xl>div>.timeline-icon-default {
+		margin-left: calc(30px - var(--timeline-line-width));
 	}
 }
