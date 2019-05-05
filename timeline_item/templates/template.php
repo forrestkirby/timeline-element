@@ -44,7 +44,6 @@ $el = $this->el('div', [
 	'class' => [
 		'el-item',
 		'uk-margin[-{item_margin}]-top',
-		'uk-margin-medium-left',
 		'uk-margin-auto uk-width-{item_maxwidth}',
 		'uk-panel {@!panel_style}',
 		'uk-card uk-{panel_style} [uk-card-{panel_size}]',
