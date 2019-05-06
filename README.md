@@ -55,6 +55,7 @@ Timeline Element is a custom element for YOOtheme Pro developed by [YOOtheme](ht
 - [YOOtheme Support](https://yootheme.com/support)
 - [Toggle Element](https://github.com/forrestkirby/toggle-element)
 - [Progress Element](https://github.com/forrestkirby/progress-element)
+- [Counter Element](https://github.com/forrestkirby/counter-element)
 
 ## Screenshots
 
