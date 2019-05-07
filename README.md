@@ -32,7 +32,6 @@ Please report issues using the [Github issue tool](../../issues).
 
 ## To-do
 
-- add position settings from YOOtheme Pro 1.20
 - set icon ratio
 - set icon ratio per item
 - use image instead of icon
