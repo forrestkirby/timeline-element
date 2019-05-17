@@ -28,7 +28,7 @@ along with this program. If not, see <https://www.gnu.org/licenses/>.
 
 Please report issues using the [Github issue tool](../../issues).
 
-- doesn’t work with YOOtheme Pro 1.19: please use the [earlier version](https://github.com/forrestkirby/timeline-element/tree/68eafea49db6bf588e44a33933d32638a071c60f) that does not yet contain the position settings from YOOtheme Pro 1.20
+- doesn’t work with YOOtheme Pro 1.19.2 → please use the [earlier version](https://github.com/forrestkirby/timeline-element/tree/68eafea49db6bf588e44a33933d32638a071c60f)
 
 ## To-do
 
