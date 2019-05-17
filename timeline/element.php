@@ -6,7 +6,7 @@ return [
 
 	'transforms' => [
 
-		'render' => function ($node, array $params) use ($config) {
+		'render' => function ($node, array $params) use ($file) {
 
 			/**
 			 * @var $app
@@ -15,7 +15,7 @@ return [
 			 */
 			extract($params);
 
-			$app['styles']->add('builder-timeline', $config->get('url:./css/timeline.css'), [], ['defer' => true]);
+			$app['styles']->add('builder-timeline', "{$file['dirname']}/css/timeline.css", [], ['defer' => true]);
 
 		},
 
