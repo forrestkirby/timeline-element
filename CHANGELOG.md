@@ -1,5 +1,11 @@
 # Timeline Element Changelog
 
+## 1.0
+
+### Changed
+
+- custom prefix to prevent conflicts with third party elements
+
 ## 0.5
 
 ### Added
