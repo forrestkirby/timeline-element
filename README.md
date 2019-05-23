@@ -2,7 +2,7 @@
 
 A custom element for the YOOtheme Pro Page Builder based on the grid element.
 
-Copyright (C) 2007-2019 YOOtheme GmbH yootheme.com, 2019 forrestkirby github.com/forrestkirby
+Copyright (C) 2007–2019 YOOtheme GmbH yootheme.com, 2019 forrestkirby github.com/forrestkirby
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
