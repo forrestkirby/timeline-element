@@ -1,15 +1,15 @@
 /* Timeline CSS */
 
 :root {
-	--timeline-line-width: 4px;
-	--timeline-icon-size: 40px;
 	--timeline-line-color: rgba(0, 0, 0, 0.1);
+	--timeline-line-width: 4px;
+	--timeline-icon-size: 20px;
+	--timeline-icon-padding: calc(0.3 * var(--timeline-icon-size));
+	--timeline-item-container-padding: 40px;
 }
 
 .timeline-container {
 	position: relative;
-	padding-right: 20px;
-	padding-left: 20px;
 }
 
 .timeline-container>.timeline-line {
@@ -34,13 +34,13 @@
 }
 
 .timeline-align-right>.timeline-line {
-	left: calc(var(--timeline-icon-size) + var(--timeline-line-width) / 2);
+	left: calc(var(--timeline-icon-size) + var(--timeline-icon-padding) + var(--timeline-line-width) / 2);
 	transform: none;
 }
 
 .timeline-align-left>.timeline-line {
-	left: calc(100% - var(--timeline-icon-size) - var(--timeline-line-width) / 2);
-	transform: none;
+	left: calc(100% - var(--timeline-icon-size) - var(--timeline-icon-padding) - var(--timeline-line-width));
+	transform: translateX(-50%);
 }
 
 .timeline-align-right-alternate>.timeline-line,
@@ -49,45 +49,51 @@
 	transform: translateX(-50%);
 }
 
-.timeline-align-right>div:nth-child(n)>.el-item {
+.timeline-align-right>div:nth-child(n)>.timeline-item-container {
+	position: relative;
 	width: auto;
 	left: 0;
-	padding-left: calc(var(--timeline-icon-size) * 2);
+	padding-left: calc((var(--timeline-icon-size) + var(--timeline-icon-padding) + var(--timeline-line-width)) * 2 + var(--timeline-item-container-padding));
 	padding-right: 0;
 }
 
-.timeline-align-left>div:nth-child(n)>.el-item {
+.timeline-align-left>div:nth-child(n)>.timeline-item-container {
+	position: relative;
 	width: auto;
 	left: 0;
-	padding-right: 80px;
+	padding-right: calc((var(--timeline-icon-size) + var(--timeline-icon-padding) + var(--timeline-line-width)) * 2 + var(--timeline-item-container-padding));
 	padding-left: 0;
 }
 
-.timeline-align-right-alternate>div:nth-child(even)>.el-item {
-	width: calc(50% - var(--timeline-icon-size));
+.timeline-align-right-alternate>div:nth-child(even)>.timeline-item-container {
+	position: relative;
+	width: calc(50% - var(--timeline-icon-size) - var(--timeline-icon-padding) - var(--timeline-line-width) - var(--timeline-item-container-padding));
 	left: 50%;
-	padding-left: calc(var(--timeline-icon-size) * 2);
+	padding-left: calc((var(--timeline-icon-size) + var(--timeline-icon-padding) + var(--timeline-line-width)) + var(--timeline-item-container-padding));
 	padding-right: 0;
 }
 
-.timeline-align-right-alternate>div:nth-child(odd)>.el-item {
-	width: calc(50% - var(--timeline-icon-size));
+.timeline-align-right-alternate>div:nth-child(odd)>.timeline-item-container {
+	position: relative;
+	width: calc(50% - var(--timeline-icon-size) - var(--timeline-icon-padding) - var(--timeline-line-width) - var(--timeline-item-container-padding));
 	left: 0;
-	padding-right: 80px;
+
 	padding-left: 0;
 }
 
-.timeline-align-left-alternate>div:nth-child(even)>.el-item {
-	width: calc(50% - var(--timeline-icon-size));
+.timeline-align-left-alternate>div:nth-child(even)>.timeline-item-container {
+	position: relative;
+	width: calc(50% - var(--timeline-icon-size) - var(--timeline-icon-padding) - var(--timeline-line-width) - var(--timeline-item-container-padding));
 	left: 0;
-	padding-right: 80px;
+
 	padding-left: 0;
 }
 
-.timeline-align-left-alternate>div:nth-child(odd)>.el-item {
-	width: calc(50% - var(--timeline-icon-size));
+.timeline-align-left-alternate>div:nth-child(odd)>.timeline-item-container {
+	position: relative;
+	width: calc(50% - var(--timeline-icon-size) - var(--timeline-icon-padding) - var(--timeline-line-width) - var(--timeline-item-container-padding));
 	left: 50%;
-	padding-left: calc(var(--timeline-icon-size) * 2);
+	padding-left: calc((var(--timeline-icon-size) + var(--timeline-icon-padding) + var(--timeline-line-width)) + var(--timeline-item-container-padding));
 	padding-right: 0;
 }
 
@@ -95,7 +101,8 @@
 	position: absolute;
 	background-color: #fff;
 	border-radius: 50%;
-	border-width: 4px;
+	border-width: var(--timeline-line-width);
+	padding: var(--timeline-icon-padding);
 	border-style: solid;
 }
 
@@ -104,90 +111,85 @@
 }
 
 .timeline-align-left>div>.el-icon {
-	left: calc(100% - (var(--timeline-icon-size)) * 2);
+	left: calc(100% - (var(--timeline-icon-size) + var(--timeline-icon-padding) + var(--timeline-line-width)) * 2);
 }
 
 .timeline-align-right-alternate>div>.el-icon,
 .timeline-align-left-alternate>div>.el-icon {
-	left: calc(50% - var(--timeline-icon-size) - var(--timeline-line-width));
-}
-
-.timeline-icon-default {
-	height: 20px;
-	width: 20px;
+	left: calc(50% - var(--timeline-icon-size) - var(--timeline-line-width) - var(--timeline-icon-padding));
 }
 
 .timeline-align-right>div>.timeline-icon-default,
 .timeline-align-left-alternate>div>.timeline-icon-default,
 .timeline-align-right-alternate>div>.timeline-icon-default {
-	margin-left: 30px;
+	margin-left: var(--timeline-icon-size);
 }
 
 .timeline-align-left>div>.timeline-icon-default {
-	margin-left: calc(30px - var(--timeline-line-width));
+	margin-left: var(--timeline-icon-size);
 }
 
 @media (min-width: 640px) {
-	.timeline-align-right\@s >.timeline-line {
-		left: calc(var(--timeline-icon-size) + var(--timeline-line-width) / 2);
+	.timeline-align-right\@s>.timeline-line {
+		left: calc(var(--timeline-icon-size) + var(--timeline-icon-padding) + var(--timeline-line-width) / 2);
 		transform: none;
 	}
 
-	.timeline-align-left\@s >.timeline-line {
-		left: calc(100% - var(--timeline-icon-size) - var(--timeline-line-width) / 2);
-		transform: none;
+	.timeline-align-left\@s>.timeline-line {
+		left: calc(100% - var(--timeline-icon-size) - var(--timeline-icon-padding) - var(--timeline-line-width));
+		transform: translateX(-50%);
 	}
 
-	.timeline-align-right-alternate\@s >.timeline-line {
+	.timeline-align-right-alternate\@s>.timeline-line {
 		left: 50%;
 		transform: translateX(-50%);
 	}
 
-	.timeline-align-left-alternate\@s >.timeline-line {
+	.timeline-align-left-alternate\@s>.timeline-line {
 		left: 50%;
 		transform: translateX(-50%);
 	}
 
 
-	.timeline-align-right\@s>div:nth-child(n)>.el-item {
+	.timeline-align-right\@s>div:nth-child(n)>.timeline-item-container {
 		width: auto;
 		left: 0;
-		padding-left: calc(var(--timeline-icon-size) * 2);
+		padding-left: calc((var(--timeline-icon-size) + var(--timeline-icon-padding) + var(--timeline-line-width)) * 2 + var(--timeline-item-container-padding));
 		padding-right: 0;
 	}
 
-	.timeline-align-left\@s>div:nth-child(n)>.el-item {
+	.timeline-align-left\@s>div:nth-child(n)>.timeline-item-container {
 		width: auto;
 		left: 0;
-		padding-right: 80px;
+		padding-right: calc((var(--timeline-icon-size) + var(--timeline-icon-padding) + var(--timeline-line-width)) * 2 + var(--timeline-item-container-padding));
 		padding-left: 0;
 	}
 
-	.timeline-align-right-alternate\@s >div:nth-child(even)>.el-item {
-		width: calc(50% - var(--timeline-icon-size));
+	.timeline-align-right-alternate\@s>div:nth-child(even)>.timeline-item-container {
+		width: calc(50% - var(--timeline-icon-size) - var(--timeline-icon-padding) - var(--timeline-line-width) - var(--timeline-item-container-padding));
 		left: 50%;
-		padding-left: calc(var(--timeline-icon-size) * 2);
+		padding-left: calc((var(--timeline-icon-size) + var(--timeline-icon-padding) + var(--timeline-line-width)) + var(--timeline-item-container-padding));
 		padding-right: 0;
 	}
 
-	.timeline-align-right-alternate\@s >div:nth-child(odd)>.el-item {
-		width: calc(50% - var(--timeline-icon-size));
+	.timeline-align-right-alternate\@s>div:nth-child(odd)>.timeline-item-container {
+		width: calc(50% - var(--timeline-icon-size) - var(--timeline-icon-padding) - var(--timeline-line-width) - var(--timeline-item-container-padding));
 		left: 0;
-		padding-right: 80px;
+
 		padding-left: 0;
 	}
 
-	.timeline-align-left-alternate\@s >div:nth-child(even)>.el-item {
-		width: calc(50% - var(--timeline-icon-size));
+	.timeline-align-left-alternate\@s>div:nth-child(even)>.timeline-item-container {
+		width: calc(50% - var(--timeline-icon-size) - var(--timeline-icon-padding) - var(--timeline-line-width) - var(--timeline-item-container-padding));
 		left: 0;
-		padding-right: 80px;
+
 		padding-left: 0;
 	}
 
-	.timeline-align-left-alternate\@s >div:nth-child(odd)>.el-item {
-		width: calc(50% - var(--timeline-icon-size));
+	.timeline-align-left-alternate\@s>div:nth-child(odd)>.timeline-item-container {
+		width: calc(50% - var(--timeline-icon-size) - var(--timeline-icon-padding) - var(--timeline-line-width) - var(--timeline-item-container-padding));
 		left: 50%;
-		padding-left: calc(var(--timeline-icon-size) * 2);
+		padding-left: calc((var(--timeline-icon-size) + var(--timeline-icon-padding) + var(--timeline-line-width)) + var(--timeline-item-container-padding));
 		padding-right: 0;
 	}
 
@@ -196,87 +198,87 @@
 	}
 
 	.timeline-align-left\@s>div>.el-icon {
-		left: calc(100% - (var(--timeline-icon-size)) * 2);
+		left: calc(100% - (var(--timeline-icon-size) + var(--timeline-icon-padding) + var(--timeline-line-width)) * 2);
 	}
 
 	.timeline-align-right-alternate\@s>div>.el-icon,
 	.timeline-align-left-alternate\@s>div>.el-icon {
-		left: calc(50% - var(--timeline-icon-size) - var(--timeline-line-width));
+		left: calc(50% - var(--timeline-icon-size) - var(--timeline-line-width) - var(--timeline-icon-padding));
 	}
 
 	.timeline-align-right\@s>div>.timeline-icon-default,
 	.timeline-align-left-alternate\@s>div>.timeline-icon-default,
 	.timeline-align-right-alternate\@s>div>.timeline-icon-default {
-		margin-left: 30px;
+		margin-left: var(--timeline-icon-size);
 	}
 
 	.timeline-align-left\@s>div>.timeline-icon-default {
-		margin-left: calc(30px - var(--timeline-line-width));
+		margin-left: var(--timeline-icon-size);
 	}
 }
 
 @media (min-width: 960px) {
 
-	.timeline-align-right\@m >.timeline-line {
-		left: calc(var(--timeline-icon-size) + var(--timeline-line-width) / 2);
+	.timeline-align-right\@m>.timeline-line {
+		left: calc(var(--timeline-icon-size) + var(--timeline-icon-padding) + var(--timeline-line-width) / 2);
 		transform: none;
 	}
 
-	.timeline-align-left\@m >.timeline-line {
-		left: calc(100% - var(--timeline-icon-size) - var(--timeline-line-width) / 2);
-		transform: none;
+	.timeline-align-left\@m>.timeline-line {
+		left: calc(100% - var(--timeline-icon-size) - var(--timeline-icon-padding) - var(--timeline-line-width));
+		transform: translateX(-50%);
 	}
 
-	.timeline-align-right-alternate\@m >.timeline-line {
+	.timeline-align-right-alternate\@m>.timeline-line {
 		left: 50%;
 		transform: translateX(-50%);
 	}
 
-	.timeline-align-left-alternate\@m >.timeline-line {
+	.timeline-align-left-alternate\@m>.timeline-line {
 		left: 50%;
 		transform: translateX(-50%);
 	}
 
 
-	.timeline-align-right\@m>div:nth-child(n)>.el-item {
+	.timeline-align-right\@m>div:nth-child(n)>.timeline-item-container {
 		width: auto;
 		left: 0;
-		padding-left: calc(var(--timeline-icon-size) * 2);
+		padding-left: calc((var(--timeline-icon-size) + var(--timeline-icon-padding) + var(--timeline-line-width)) * 2 + var(--timeline-item-container-padding));
 		padding-right: 0;
 	}
 
-	.timeline-align-left\@m>div:nth-child(n)>.el-item {
+	.timeline-align-left\@m>div:nth-child(n)>.timeline-item-container {
 		width: auto;
 		left: 0;
-		padding-right: 80px;
+		padding-right: calc((var(--timeline-icon-size) + var(--timeline-icon-padding) + var(--timeline-line-width)) * 2 + var(--timeline-item-container-padding));
 		padding-left: 0;
 	}
 
-	.timeline-align-right-alternate\@m >div:nth-child(even)>.el-item {
-		width: calc(50% - var(--timeline-icon-size));
+	.timeline-align-right-alternate\@m>div:nth-child(even)>.timeline-item-container {
+		width: calc(50% - var(--timeline-icon-size) - var(--timeline-icon-padding) - var(--timeline-line-width) - var(--timeline-item-container-padding));
 		left: 50%;
-		padding-left: calc(var(--timeline-icon-size) * 2);
+		padding-left: calc((var(--timeline-icon-size) + var(--timeline-icon-padding) + var(--timeline-line-width)) + var(--timeline-item-container-padding));
 		padding-right: 0;
 	}
 
-	.timeline-align-right-alternate\@m >div:nth-child(odd)>.el-item {
-		width: calc(50% - var(--timeline-icon-size));
+	.timeline-align-right-alternate\@m>div:nth-child(odd)>.timeline-item-container {
+		width: calc(50% - var(--timeline-icon-size) - var(--timeline-icon-padding) - var(--timeline-line-width) - var(--timeline-item-container-padding));
 		left: 0;
-		padding-right: 80px;
+
 		padding-left: 0;
 	}
 
-	.timeline-align-left-alternate\@m >div:nth-child(even)>.el-item {
-		width: calc(50% - var(--timeline-icon-size));
+	.timeline-align-left-alternate\@m>div:nth-child(even)>.timeline-item-container {
+		width: calc(50% - var(--timeline-icon-size) - var(--timeline-icon-padding) - var(--timeline-line-width) - var(--timeline-item-container-padding));
 		left: 0;
-		padding-right: 80px;
+
 		padding-left: 0;
 	}
 
-	.timeline-align-left-alternate\@m >div:nth-child(odd)>.el-item {
-		width: calc(50% - var(--timeline-icon-size));
+	.timeline-align-left-alternate\@m>div:nth-child(odd)>.timeline-item-container {
+		width: calc(50% - var(--timeline-icon-size) - var(--timeline-icon-padding) - var(--timeline-line-width) - var(--timeline-item-container-padding));
 		left: 50%;
-		padding-left: calc(var(--timeline-icon-size) * 2);
+		padding-left: calc((var(--timeline-icon-size) + var(--timeline-icon-padding) + var(--timeline-line-width)) + var(--timeline-item-container-padding));
 		padding-right: 0;
 	}
 
@@ -285,87 +287,87 @@
 	}
 
 	.timeline-align-left\@m>div>.el-icon {
-		left: calc(100% - (var(--timeline-icon-size)) * 2);
+		left: calc(100% - (var(--timeline-icon-size) + var(--timeline-icon-padding) + var(--timeline-line-width)) * 2);
 	}
 
 	.timeline-align-right-alternate\@m>div>.el-icon,
 	.timeline-align-left-alternate\@m>div>.el-icon {
-		left: calc(50% - var(--timeline-icon-size) - var(--timeline-line-width));
+		left: calc(50% - var(--timeline-icon-size) - var(--timeline-line-width) - var(--timeline-icon-padding));
 	}
 
 	.timeline-align-right\@m>div>.timeline-icon-default,
 	.timeline-align-left-alternate\@m>div>.timeline-icon-default,
 	.timeline-align-right-alternate\@m>div>.timeline-icon-default {
-		margin-left: 30px;
+		margin-left: var(--timeline-icon-size);
 	}
 
 	.timeline-align-left\@m>div>.timeline-icon-default {
-		margin-left: calc(30px - var(--timeline-line-width));
+		margin-left: var(--timeline-icon-size);
 	}
 }
 
 @media (min-width: 1200px) {
 
-	.timeline-align-right\@l >.timeline-line {
-		left: calc(var(--timeline-icon-size) + var(--timeline-line-width) / 2);
+	.timeline-align-right\@l>.timeline-line {
+		left: calc(var(--timeline-icon-size) + var(--timeline-icon-padding) + var(--timeline-line-width) / 2);
 		transform: none;
 	}
 
-	.timeline-align-left\@l >.timeline-line {
-		left: calc(100% - var(--timeline-icon-size) - var(--timeline-line-width) / 2);
-		transform: none;
+	.timeline-align-left\@l>.timeline-line {
+		left: calc(100% - var(--timeline-icon-size) - var(--timeline-icon-padding) - var(--timeline-line-width));
+		transform: translateX(-50%);
 	}
 
-	.timeline-align-right-alternate\@l >.timeline-line {
+	.timeline-align-right-alternate\@l>.timeline-line {
 		left: 50%;
 		transform: translateX(-50%);
 	}
 
-	.timeline-align-left-alternate\@l >.timeline-line {
+	.timeline-align-left-alternate\@l>.timeline-line {
 		left: 50%;
 		transform: translateX(-50%);
 	}
 
 
-	.timeline-align-right\@l>div:nth-child(n)>.el-item {
+	.timeline-align-right\@l>div:nth-child(n)>.timeline-item-container {
 		width: auto;
 		left: 0;
-		padding-left: calc(var(--timeline-icon-size) * 2);
+		padding-left: calc((var(--timeline-icon-size) + var(--timeline-icon-padding) + var(--timeline-line-width)) * 2 + var(--timeline-item-container-padding));
 		padding-right: 0;
 	}
 
-	.timeline-align-left\@l>div:nth-child(n)>.el-item {
+	.timeline-align-left\@l>div:nth-child(n)>.timeline-item-container {
 		width: auto;
 		left: 0;
-		padding-right: 80px;
+		padding-right: calc((var(--timeline-icon-size) + var(--timeline-icon-padding) + var(--timeline-line-width)) * 2 + var(--timeline-item-container-padding));
 		padding-left: 0;
 	}
 
-	.timeline-align-right-alternate\@l >div:nth-child(even)>.el-item {
-		width: calc(50% - var(--timeline-icon-size));
+	.timeline-align-right-alternate\@l>div:nth-child(even)>.timeline-item-container {
+		width: calc(50% - var(--timeline-icon-size) - var(--timeline-icon-padding) - var(--timeline-line-width) - var(--timeline-item-container-padding));
 		left: 50%;
-		padding-left: calc(var(--timeline-icon-size) * 2);
+		padding-left: calc((var(--timeline-icon-size) + var(--timeline-icon-padding) + var(--timeline-line-width)) + var(--timeline-item-container-padding));
 		padding-right: 0;
 	}
 
-	.timeline-align-right-alternate\@l >div:nth-child(odd)>.el-item {
-		width: calc(50% - var(--timeline-icon-size));
+	.timeline-align-right-alternate\@l>div:nth-child(odd)>.timeline-item-container {
+		width: calc(50% - var(--timeline-icon-size) - var(--timeline-icon-padding) - var(--timeline-line-width) - var(--timeline-item-container-padding));
 		left: 0;
-		padding-right: 80px;
+
 		padding-left: 0;
 	}
 
-	.timeline-align-left-alternate\@l >div:nth-child(even)>.el-item {
-		width: calc(50% - var(--timeline-icon-size));
+	.timeline-align-left-alternate\@l>div:nth-child(even)>.timeline-item-container {
+		width: calc(50% - var(--timeline-icon-size) - var(--timeline-icon-padding) - var(--timeline-line-width) - var(--timeline-item-container-padding));
 		left: 0;
-		padding-right: 80px;
+
 		padding-left: 0;
 	}
 
-	.timeline-align-left-alternate\@l >div:nth-child(odd)>.el-item {
-		width: calc(50% - var(--timeline-icon-size));
+	.timeline-align-left-alternate\@l>div:nth-child(odd)>.timeline-item-container {
+		width: calc(50% - var(--timeline-icon-size) - var(--timeline-icon-padding) - var(--timeline-line-width) - var(--timeline-item-container-padding));
 		left: 50%;
-		padding-left: calc(var(--timeline-icon-size) * 2);
+		padding-left: calc((var(--timeline-icon-size) + var(--timeline-icon-padding) + var(--timeline-line-width)) + var(--timeline-item-container-padding));
 		padding-right: 0;
 	}
 
@@ -374,86 +376,86 @@
 	}
 
 	.timeline-align-left\@l>div>.el-icon {
-		left: calc(100% - (var(--timeline-icon-size)) * 2);
+		left: calc(100% - (var(--timeline-icon-size) + var(--timeline-icon-padding) + var(--timeline-line-width)) * 2);
 	}
 
 	.timeline-align-right-alternate\@l>div>.el-icon,
 	.timeline-align-left-alternate\@l>div>.el-icon {
-		left: calc(50% - var(--timeline-icon-size) - var(--timeline-line-width));
+		left: calc(50% - var(--timeline-icon-size) - var(--timeline-line-width) - var(--timeline-icon-padding));
 	}
 
 	.timeline-align-right\@l>div>.timeline-icon-default,
 	.timeline-align-left-alternate\@l>div>.timeline-icon-default,
 	.timeline-align-right-alternate\@l>div>.timeline-icon-default {
-		margin-left: 30px;
+		margin-left: var(--timeline-icon-size);
 	}
 
 	.timeline-align-left\@l>div>.timeline-icon-default {
-		margin-left: calc(30px - var(--timeline-line-width));
+		margin-left: var(--timeline-icon-size);
 	}
 }
 
 @media (min-width: 1600px) {
 
-	.timeline-align-right\@xl >.timeline-line {
-		left: calc(var(--timeline-icon-size) + var(--timeline-line-width) / 2);
+	.timeline-align-right\@xl>.timeline-line {
+		left: calc(var(--timeline-icon-size) + var(--timeline-icon-padding) + var(--timeline-line-width) / 2);
 		transform: none;
 	}
 
-	.timeline-align-left\@xl >.timeline-line {
-		left: calc(100% - var(--timeline-icon-size) - var(--timeline-line-width) / 2);
-		transform: none;
+	.timeline-align-left\@xl>.timeline-line {
+		left: calc(100% - var(--timeline-icon-size) - var(--timeline-icon-padding) - var(--timeline-line-width));
+		transform: translateX(-50%);
 	}
 
-	.timeline-align-right-alternate\@xl >.timeline-line {
+	.timeline-align-right-alternate\@xl>.timeline-line {
 		left: 50%;
 		transform: translateX(-50%);
 	}
 
-	.timeline-align-left-alternate\@xl >.timeline-line {
+	.timeline-align-left-alternate\@xl>.timeline-line {
 		left: 50%;
 		transform: translateX(-50%);
 	}
 
-	.timeline-align-right\@xl>div:nth-child(n)>.el-item {
+	.timeline-align-right\@xl>div:nth-child(n)>.timeline-item-container {
 		width: auto;
 		left: 0;
-		padding-left: calc(var(--timeline-icon-size) * 2);
+		padding-left: calc((var(--timeline-icon-size) + var(--timeline-icon-padding) + var(--timeline-line-width)) * 2 + var(--timeline-item-container-padding));
 		padding-right: 0;
 	}
 
-	.timeline-align-left\@xl>div:nth-child(n)>.el-item {
+	.timeline-align-left\@xl>div:nth-child(n)>.timeline-item-container {
 		width: auto;
 		left: 0;
-		padding-right: 80px;
+		padding-right: calc((var(--timeline-icon-size) + var(--timeline-icon-padding) + var(--timeline-line-width)) * 2 + var(--timeline-item-container-padding));
 		padding-left: 0;
 	}
 
-	.timeline-align-right-alternate\@xl >div:nth-child(even)>.el-item {
-		width: calc(50% - var(--timeline-icon-size));
+	.timeline-align-right-alternate\@xl>div:nth-child(even)>.timeline-item-container {
+		width: calc(50% - var(--timeline-icon-size) - var(--timeline-icon-padding) - var(--timeline-line-width) - var(--timeline-item-container-padding));
 		left: 50%;
-		padding-left: calc(var(--timeline-icon-size) * 2);
+		padding-left: calc((var(--timeline-icon-size) + var(--timeline-icon-padding) + var(--timeline-line-width)) + var(--timeline-item-container-padding));
 		padding-right: 0;
 	}
 
-	.timeline-align-right-alternate\@xl >div:nth-child(odd)>.el-item {
-		width: calc(50% - var(--timeline-icon-size));
+	.timeline-align-right-alternate\@xl>div:nth-child(odd)>.timeline-item-container {
+		width: calc(50% - var(--timeline-icon-size) - var(--timeline-icon-padding) - var(--timeline-line-width) - var(--timeline-item-container-padding));
 		left: 0;
-		padding-right: 80px;
+
 		padding-left: 0;
 	}
 
-	.timeline-align-left-alternate\@xl >div:nth-child(even)>.el-item {
-		width: calc(50% - var(--timeline-icon-size));
+	.timeline-align-left-alternate\@xl>div:nth-child(even)>.timeline-item-container {
+		width: calc(50% - var(--timeline-icon-size) - var(--timeline-icon-padding) - var(--timeline-line-width) - var(--timeline-item-container-padding));
 		left: 0;
-		padding-right: 80px;
+
 		padding-left: 0;
 	}
 
-	.timeline-align-left-alternate\@xl >div:nth-child(odd)>.el-item {
-		width: calc(50% - var(--timeline-icon-size));
+	.timeline-align-left-alternate\@xl>div:nth-child(odd)>.timeline-item-container {
+		width: calc(50% - var(--timeline-icon-size) - var(--timeline-icon-padding) - var(--timeline-line-width) - var(--timeline-item-container-padding));
 		left: 50%;
-		padding-left: calc(var(--timeline-icon-size) * 2);
+		padding-left: calc((var(--timeline-icon-size) + var(--timeline-icon-padding) + var(--timeline-line-width)) + var(--timeline-item-container-padding));
 		padding-right: 0;
 	}
 
@@ -462,21 +464,21 @@
 	}
 
 	.timeline-align-left\@xl>div>.el-icon {
-		left: calc(100% - (var(--timeline-icon-size)) * 2);
+		left: calc(100% - (var(--timeline-icon-size) + var(--timeline-icon-padding) + var(--timeline-line-width)) * 2);
 	}
 
 	.timeline-align-right-alternate\@xl>div>.el-icon,
 	.timeline-align-left-alternate\@xl>div>.el-icon {
-		left: calc(50% - var(--timeline-icon-size) - var(--timeline-line-width));
+		left: calc(50% - var(--timeline-icon-size) - var(--timeline-line-width) - var(--timeline-icon-padding));
 	}
 
 	.timeline-align-right\@xl>div>.timeline-icon-default,
 	.timeline-align-left-alternate\@xl>div>.timeline-icon-default,
 	.timeline-align-right-alternate\@xl>div>.timeline-icon-default {
-		margin-left: 30px;
+		margin-left: var(--timeline-icon-size);
 	}
 
 	.timeline-align-left\@xl>div>.timeline-icon-default {
-		margin-left: calc(30px - var(--timeline-line-width));
+		margin-left: var(--timeline-icon-size);
 	}
 }

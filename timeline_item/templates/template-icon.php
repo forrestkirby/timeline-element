@@ -30,8 +30,8 @@ if ($props['icon']) {
 
 		'class' => [
 			'el-icon',
-			'timeline-icon-default',
 			'uk-text-{icon_color}',
+			'timeline-icon-default',
 		],
 
 		'style' => [

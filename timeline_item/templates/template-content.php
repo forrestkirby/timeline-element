@@ -33,7 +33,7 @@ $meta = $this->el('div', [
 $content = $this->el('div', [
 
 	'class' => [
-		'el-content',
+		'el-content uk-panel',
 		'uk-text-{content_style}',
 		'uk-margin[-{content_margin}]-top {@!content_margin: remove}',
 	],
@@ -49,9 +49,39 @@ $link_container = $this->el('div', [
 
 ]);
 
+// Title Grid
+$grid = $this->el('div', [
+
+	'class' => [
+		'uk-child-width-expand',
+		'uk-grid-{title_gutter}',
+		'uk-margin[-{title_margin}]-top {@!title_margin: remove} {@image_align: top}' => !$props['meta'] || $element['meta_align'] != 'above-title',
+		'uk-margin[-{meta_margin}]-top {@!meta_margin: remove} {@image_align: top} {@meta_align: above-title}' => $props['meta'],
+	],
+
+	'uk-grid' => true,
+]);
+
+$cell_title = $this->el('div', [
+
+	'class' => [
+		'uk-width-{title_grid_width}[@{title_breakpoint}]',
+		'uk-margin-remove-first-child',
+	],
+
+]);
+
+$cell_content = $this->el('div', [
+
+	'class' => [
+		'uk-margin-remove-first-child',
+	],
+
+]);
+
 ?>
 
-<?php if ($props['meta'] && $element['meta_align'] == 'top') : ?>
+<?php if ($props['meta'] && $element['meta_align'] == 'above-title') : ?>
 <?= $meta($element, $props['meta']) ?>
 <?php endif ?>
 
@@ -67,18 +97,28 @@ $link_container = $this->el('div', [
 <?= $title->end() ?>
 <?php endif ?>
 
-<?php if ($props['meta'] && $element['meta_align'] == 'bottom') : ?>
+<?php if ($props['meta'] && $element['meta_align'] == 'below-title') : ?>
 <?= $meta($element, $props['meta']) ?>
 <?php endif ?>
 
+
+
 <?php if ($element['image_align'] == 'between') : ?>
 <?= $props['image'] ?>
+<?php endif ?>
+
+<?php if ($props['meta'] && $element['meta_align'] == 'above-content') : ?>
+<?= $meta($element, $props['meta']) ?>
 <?php endif ?>
 
 <?php if ($props['content']) : ?>
 <?= $content($element, $props['content']) ?>
 <?php endif ?>
 
-<?php if ($props['link'] && $element['link_style'] != 'panel' && $element['link_text']) : ?>
-<?= $link_container($element, $node->link->render($element, $element['link_text'])) ?>
+<?php if ($props['meta'] && $element['meta_align'] == 'below-content') : ?>
+<?= $meta($element, $props['meta']) ?>
+<?php endif ?>
+
+<?php if ($props['link'] && !$element['link_type'] && $element['link_text']) : ?>
+<?= $link_container($element, $link($element, $element['link_text'])) ?>
 <?php endif ?>

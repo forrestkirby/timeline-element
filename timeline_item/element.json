@@ -8,7 +8,7 @@
 		{
 			"title": "Title",
 			"meta": "",
-			"content": "",
+			"content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
 			"image": "",
 			"icon": ""
 		}
@@ -33,11 +33,7 @@
 			"label": "Content",
 			"type": "editor"
 		},
-		"image":
-		{
-			"label": "Image",
-			"type": "image"
-		},
+		"image": "${builder.image}",
 		"image_alt":
 		{
 			"label": "Image Alt",
@@ -46,9 +42,10 @@
 		"icon":
 		{
 			"label": "Icon",
+			"description": "Click on the pencil to pick an icon from the icon library.",
 			"type": "icon"
 		},
-		"link": "${builder:link}"
+		"link": "${builder.link}"
 	},
 	"fieldset":
 	{

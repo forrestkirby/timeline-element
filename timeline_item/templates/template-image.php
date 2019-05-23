@@ -7,11 +7,13 @@ if ($props['image']) {
 
 		'class' => [
 			'el-image',
-			'uk-border-{image_border}' => !$element['panel_style'] || ($element['panel_style'] && (!$element['image_card'] || $element['image_align'] == 'between')),
-			'uk-box-shadow-{image_box_shadow} {@!panel_style}',
-			'uk-box-shadow-hover-{image_hover_box_shadow} {@!panel_style} {@link_style: panel}' => $props['link'],
+			'uk-border-{image_border} {@!image_transition}' => !$element['panel_style'] || ($element['panel_style'] && (!$element['panel_card_image'] || $element['image_align'] == 'between')),
+			'uk-box-shadow-{image_box_shadow} {@!panel_style} {@!image_transition}',
+			'uk-box-shadow-hover-{image_hover_box_shadow} {@!panel_style} {@link_type} {@!image_transition}' => $props['link'],
+			'uk-transition-{image_transition} uk-transition-opaque {@link_type}' => $props['link'],
+
 			'uk-text-{image_svg_color} {@image_svg_inline}' => $this->isImage($props['image']) == 'svg',
-			'uk-margin[-{image_margin}]-top {@!image_margin: remove} {@!image_box_decoration}' => $element['image_align'] == 'between' || ($element['image_align'] == 'bottom' && !$element['image_card']),
+			'uk-margin[-{image_margin}]-top {@!image_margin: remove} {@!image_box_decoration} {@!image_transition}' => $element['image_align'] == 'between' || ($element['image_align'] == 'bottom' && !($element['panel_style'] && $element['panel_card_image'])),
 		],
 
 		'src' => $props['image'],
@@ -19,7 +21,7 @@ if ($props['image']) {
 		'width' => $element['image_width'],
 		'height' => $element['image_height'],
 		'uk-svg' => $element['image_svg_inline'],
-		'uk-cover' => $element['panel_style'] && $element['image_card'] && in_array($element['image_align'], ['left', 'right']),
+		'uk-cover' => $element['panel_style'] && $element['panel_card_image'] && in_array($element['image_align'], ['left', 'right']),
 		'thumbnail' => true,
 	]);
 

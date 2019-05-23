@@ -16,10 +16,11 @@
 		"show_link": true,
 		"align_default": "right",
 		"align_medium": "left-alternate",
+		"title_hover_style": "reset",
 		"title_element": "h3",
 		"meta_style": "meta",
-		"meta_align": "bottom",
-		"icon_ratio": 4,
+		"meta_align": "below-title",
+		"icon_ratio": 2,
 		"image_thumbnail": false,
 		"image_align": "top",
 		"image_grid_width": "1-2",
@@ -224,9 +225,25 @@
 				"Card Hover": "card-hover"
 			}
 		},
+		"panel_content_padding":
+		{
+			"label": "Padding",
+			"description": "Add padding to the content if the image is top, left or right aligned.",
+			"type": "select",
+			"default": "",
+			"options":
+			{
+				"None": "",
+				"Small": "small",
+				"Default": "default",
+				"Large": "large"
+			},
+			"show": "!panel_style",
+			"enable": "show_image && image_align != 'between'"
+		},
 		"panel_size":
 		{
-			"label": "Size",
+			"label": "Padding",
 			"description": "Define the card's size by selecting the padding between the card and its content.",
 			"type": "select",
 			"default": "",
@@ -236,7 +253,15 @@
 				"Default": "",
 				"Large": "large"
 			},
-			"enable": "panel_style"
+			"show": "panel_style"
+		},
+		"panel_card_image":
+		{
+			"description": "Top, left or right aligned images can be attached to the card's edge. If the image is aligned to the left or right, it will also extend to cover the whole space.",
+			"type": "checkbox",
+			"text": "Align image without padding",
+			"show": "panel_style",
+			"enable": "show_image && image_align != 'between'"
 		},
 		"item_maxwidth":
 		{
@@ -263,19 +288,32 @@
 			"options":
 			{
 				"Default": "",
+				"2Xlarge": "heading-2xlarge",
+				"XLarge": "heading-xlarge",
+				"Large": "heading-large",
+				"Medium": "heading-medium",
+				"Small": "heading-small",
 				"H1": "h1",
 				"H2": "h2",
 				"H3": "h3",
 				"H4": "h4",
 				"H5": "h5",
-				"H6": "h6",
-				"Small": "heading-small",
-				"Medium": "heading-medium",
-				"Large": "heading-large",
-				"XLarge": "heading-xlarge",
-				"2XLarge": "heading-2xlarge"
+				"H6": "h6"
 			},
 			"enable": "show_title"
+		},
+		"title_hover_style":
+		{
+			"label": "Hover Style",
+			"description": "Set the hover style for a linked title.",
+			"type": "select",
+			"options":
+			{
+				"None": "reset",
+				"Heading Link": "heading",
+				"Default Link": ""
+			},
+			"enable": "show_title && show_link && link_type"
 		},
 		"title_decoration":
 		{
@@ -353,6 +391,14 @@
 			{
 				"Default": "",
 				"Meta": "meta",
+				"2Xlarge": "heading-2xlarge",
+				"XLarge": "heading-xlarge",
+				"Large": "heading-large",
+				"Medium": "heading-medium",
+				"Small": "heading-small",
+				"H1": "h1",
+				"H2": "h2",
+				"H3": "h3",
 				"H4": "h4",
 				"H5": "h5",
 				"H6": "h6"
@@ -384,15 +430,17 @@
 			"type": "select",
 			"options":
 			{
-				"Top": "top",
-				"Bottom": "bottom"
+				"Above Title": "above-title",
+				"Below Title": "below-title",
+				"Above Content": "above-content",
+				"Below Content": "below-content"
 			},
 			"enable": "show_meta"
 		},
 		"meta_margin":
 		{
 			"label": "Margin Top",
-			"description": "Set the top margin.",
+			"description": "Set the top margin. Note that the margin will only apply if the content field immediately follows another content field.",
 			"type": "select",
 			"default": "",
 			"options":
@@ -422,7 +470,7 @@
 		"content_margin":
 		{
 			"label": "Margin Top",
-			"description": "Set the top margin.",
+			"description": "Set the top margin. Note that the margin will only apply if the content field immediately follows another content field.",
 			"type": "select",
 			"default": "",
 			"options":
@@ -452,13 +500,19 @@
 			},
 			"enable": "show_image"
 		},
-		"image_card":
+		"image_transition":
 		{
-			"label": "Padding",
-			"description": "Top, left or right aligned images can be attached to the card's edge. If the image is aligned to the left or right, it will also extend to cover the whole space.",
-			"type": "checkbox",
-			"text": "Align image without padding",
-			"enable": "show_image && panel_style && image_align != 'between'"
+			"label": "Hover Transition",
+			"description": "Set the hover transition for a linked image.",
+			"type": "select",
+			"default": "",
+			"options":
+			{
+				"None": "",
+				"Scale Up": "scale-up",
+				"Scale Down": "scale-down"
+			},
+			"enable": "show_image && show_link && link_type"
 		},
 		"image_border":
 		{
@@ -473,7 +527,7 @@
 				"Circle": "circle",
 				"Pill": "pill"
 			},
-			"enable": "show_image && (!panel_style || (panel_style && (!image_card || image_align == 'between')"
+			"enable": "show_image && (!panel_style || (panel_style && (!panel_card_image || image_align == 'between')))"
 		},
 		"image_box_shadow":
 		{
@@ -505,7 +559,7 @@
 				"Large": "large",
 				"X-Large": "xlarge"
 			},
-			"enable": "show_link && show_image && !panel_style && link_style == 'panel'"
+			"enable": "show_link && show_image && !panel_style && link_type"
 		},
 		"image_box_decoration":
 		{
@@ -597,7 +651,7 @@
 				"Large": "large",
 				"Collapse": "collapse"
 			},
-			"enable": "show_image && (image_align == 'left' || image_align == 'right') && !(image_card && panel_style)"
+			"enable": "show_image && (image_align == 'left' || image_align == 'right') && !(panel_card_image && panel_style)"
 		},
 		"image_breakpoint":
 		{
@@ -624,7 +678,7 @@
 		"image_margin":
 		{
 			"label": "Margin Top",
-			"description": "Set the top margin.",
+			"description": "Set the top margin. Note that the margin will only apply if the content field immediately follows another content field.",
 			"type": "select",
 			"default": "",
 			"options":
@@ -636,7 +690,7 @@
 				"X-Large": "xlarge",
 				"None": "remove"
 			},
-			"enable": "show_image && (image_align == 'between' || image_align == 'bottom' && !image_card)"
+			"enable": "show_image && (image_align == 'between' || (image_align == 'bottom' && !(panel_style && panel_card_image)))"
 		},
 		"image_svg_inline":
 		{
@@ -670,10 +724,18 @@
 			},
 			"enable": "show_image && image_svg_inline"
 		},
-		"link_text":
+		"link_type":
 		{
-			"label": "Text",
-			"description": "Enter the text for the link.",
+			"label": "Type",
+			"description": "Show the link as a button or choose between linking just the image and title or the whole item.",
+			"type": "select",
+			"default": "",
+			"options":
+			{
+				"Button": "",
+				"Title/Image": "content",
+				"Item": "element"
+			},
 			"enable": "show_link"
 		},
 		"link_target":
@@ -682,6 +744,12 @@
 			"text": "Open in a new window",
 			"enable": "show_link"
 		},
+		"link_text":
+		{
+			"label": "Text",
+			"description": "Enter the text for the link.",
+			"enable": "show_link && !link_type"
+		},
 		"link_style":
 		{
 			"label": "Style",
@@ -689,17 +757,16 @@
 			"type": "select",
 			"options":
 			{
-				"Link": "",
-				"Link Muted": "link-muted",
-				"Link Text": "link-text",
 				"Button Default": "default",
 				"Button Primary": "primary",
 				"Button Secondary": "secondary",
 				"Button Danger": "danger",
 				"Button Text": "text",
-				"Image/Card": "panel"
+				"Link": "",
+				"Link Muted": "link-muted",
+				"Link Text": "link-text"
 			},
-			"enable": "show_link"
+			"enable": "show_link && !link_type"
 		},
 		"link_size":
 		{
@@ -713,12 +780,12 @@
 				"Default": "",
 				"Large": "large"
 			},
-			"enable": "show_link && link_style && link_style != 'link-muted' && link_style != 'link-text' && link_style != 'panel'"
+			"enable": "show_link && !link_type && link_style && link_style != 'link-muted' && link_style != 'link-text'"
 		},
 		"link_margin":
 		{
 			"label": "Margin Top",
-			"description": "Set the top margin.",
+			"description": "Set the top margin. Note that the margin will only apply if the content field immediately follows another content field.",
 			"type": "select",
 			"default": "",
 			"options":
@@ -730,32 +797,32 @@
 				"X-Large": "xlarge",
 				"None": "remove"
 			},
-			"enable": "show_link && link_style != 'panel'"
+			"enable": "show_link && !link_type"
 		},
-		"position": "${builder:position}",
-		"position_left": "${builder:position_left}",
-		"position_right": "${builder:position_right}",
-		"position_top": "${builder:position_top}",
-		"position_bottom": "${builder:position_bottom}",
-		"position_z_index": "${builder:position_z_index}",
-		"margin": "${builder:margin}",
-		"margin_remove_top": "${builder:margin_remove_top}",
-		"margin_remove_bottom": "${builder:margin_remove_bottom}",
-		"maxwidth": "${builder:maxwidth}",
-		"maxwidth_breakpoint": "${builder:maxwidth_breakpoint}",
-		"block_align": "${builder:block_align}",
-		"block_align_breakpoint": "${builder:block_align_breakpoint}",
-		"block_align_fallback": "${builder:block_align_fallback}",
-		"text_align": "${builder:text_align_justify}",
-		"text_align_breakpoint": "${builder:text_align_breakpoint}",
-		"text_align_fallback": "${builder:text_align_justify_fallback}",
-		"item_animation": "${builder:animation}",
-		"_parallax_button": "${builder:_parallax_button}",
-		"visibility": "${builder:visibility}",
-		"name": "${builder:name}",
-		"status": "${builder:status}",
-		"id": "${builder:id}",
-		"class": "${builder:cls}",
+		"position": "${builder.position}",
+		"position_left": "${builder.position_left}",
+		"position_right": "${builder.position_right}",
+		"position_top": "${builder.position_top}",
+		"position_bottom": "${builder.position_bottom}",
+		"position_z_index": "${builder.position_z_index}",
+		"margin": "${builder.margin}",
+		"margin_remove_top": "${builder.margin_remove_top}",
+		"margin_remove_bottom": "${builder.margin_remove_bottom}",
+		"maxwidth": "${builder.maxwidth}",
+		"maxwidth_breakpoint": "${builder.maxwidth_breakpoint}",
+		"block_align": "${builder.block_align}",
+		"block_align_breakpoint": "${builder.block_align_breakpoint}",
+		"block_align_fallback": "${builder.block_align_fallback}",
+		"text_align": "${builder.text_align_justify}",
+		"text_align_breakpoint": "${builder.text_align_breakpoint}",
+		"text_align_fallback": "${builder.text_align_justify_fallback}",
+		"item_animation": "${builder.animation}",
+		"_parallax_button": "${builder._parallax_button}",
+		"visibility": "${builder.visibility}",
+		"name": "${builder.name}",
+		"status": "${builder.status}",
+		"id": "${builder.id}",
+		"class": "${builder.cls}",
 		"css":
 		{
 			"label": "CSS",
@@ -794,9 +861,10 @@
 						"type": "group",
 						"divider": true,
 						"fields": [
+							"icon_color",
 							"line_color",
-							"icon_background",
-							"icon_border"
+							"icon_border",
+							"icon_background"
 						]
 					},
 					{
@@ -818,7 +886,9 @@
 						"divider": true,
 						"fields": [
 							"panel_style",
+							"panel_content_padding",
 							"panel_size",
+							"panel_card_image",
 							"item_maxwidth"
 						]
 					},
@@ -828,6 +898,7 @@
 						"divider": true,
 						"fields": [
 							"title_style",
+							"title_hover_style",
 							"title_decoration",
 							"title_color",
 							"title_element",
@@ -869,13 +940,12 @@
 									"image_height"
 								]
 							},
-							"image_card",
+							"image_transition",
 							"image_border",
 							"image_box_shadow",
 							"image_hover_box_shadow",
 							"image_box_decoration",
 							"image_box_decoration_inverse",
-							"icon_color",
 							"image_align",
 							"image_grid_width",
 							"image_gutter",
@@ -892,8 +962,9 @@
 						"type": "group",
 						"divider": true,
 						"fields": [
-							"link_text",
+							"link_type",
 							"link_target",
+							"link_text",
 							"link_style",
 							"link_size",
 							"link_margin"
@@ -926,7 +997,7 @@
 						]
 					}]
 				},
-				"${builder:advanced}"
+				"${builder.advanced}"
 			]
 		}
 	}
