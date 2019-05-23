@@ -60,6 +60,6 @@ Timeline Element is a custom element for YOOtheme Pro developed by [YOOtheme](ht
 
 ![Image](https://pionte.ch/yootheme/max/images/tutorial-timeline-2.jpg)
 
-![Image](https://pionte.ch/yootheme/max/images/tutorial-timeline-3.jpg)
+![Image](https://pionte.ch/yootheme/max/images/tutorial-timeline-.jpg)
 
-![Image](https://pionte.ch/yootheme/max/images/tutorial-timeline-4.jpg)
+![Image](https://pionte.ch/yootheme/max/images/tutorial-timeline-.jpg)
