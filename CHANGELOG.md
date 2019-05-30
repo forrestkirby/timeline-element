@@ -1,5 +1,11 @@
 # Timeline Element Changelog
 
+## 1.1
+
+### Fixed
+
+- image field disabled if icon is used
+
 ## 1.0
 
 ### Changed
