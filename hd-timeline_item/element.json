@@ -33,7 +33,11 @@
 			"label": "Content",
 			"type": "editor"
 		},
-		"image": "${builder.image}",
+		"image":
+		{
+			"label": "Image",
+			"type": "image"
+		},
 		"image_alt":
 		{
 			"label": "Image Alt",
