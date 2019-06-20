@@ -330,6 +330,22 @@
 			},
 			"enable": "show_title"
 		},
+		"title_font_family":
+		{
+			"label": "Font Family",
+			"description": "Select an alternative font family.",
+			"type": "select",
+			"default": "",
+			"options":
+			{
+				"None": "",
+				"Default": "default",
+				"Primary": "primary",
+				"Secondary": "secondary",
+				"Tertiary": "tertiary"
+			},
+			"enable": "show_title"
+		},
 		"title_color":
 		{
 			"label": "Color",
@@ -900,6 +916,7 @@
 							"title_style",
 							"title_hover_style",
 							"title_decoration",
+							"title_font_family",
 							"title_color",
 							"title_element",
 							"title_margin"
