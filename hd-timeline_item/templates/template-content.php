@@ -8,6 +8,7 @@ $title = $this->el($element['title_element'], [
 		'uk-{title_style}',
 		'uk-card-title {@panel_style} {@!title_style}',
 		'uk-heading-{title_decoration}',
+		'uk-font-{title_font_family}',
 		'uk-text-{title_color} {@!title_color: background}',
 		'uk-margin[-{title_margin}]-top {@!title_margin: remove}',
 		'uk-margin-remove-top {@title_margin: remove}',
