@@ -20,9 +20,8 @@ along with this program. If not, see <https://www.gnu.org/licenses/>.
 ## Installation
 
 - download and unzip the element package
-- rename `timeline-element-master` to `hd-timeline`
 - create a [Child Theme](https://yootheme.com/support/yootheme-pro/joomla/child-themes) in your YOOtheme Pro installation and activate the child theme
-- copy all files into the directory `/templates/yootheme_child/builder/` (Joomla!) or `/wp-content/themes/yootheme-child/builder/` (WordPress) of your installation while *child* must be the name of your child theme
+- copy the complete folders `hd-timeline` and `hd-timeline_item` into the directory `/templates/yootheme_child/builder/` (Joomla!) or `/wp-content/themes/yootheme-child/builder/` (WordPress) of your installation while *child* must be the name of your child theme
 - access the YOOtheme Pro Page Builder, the custom elements should now be available
 
 ## Issues
