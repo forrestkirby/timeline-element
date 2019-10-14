@@ -50,7 +50,42 @@ $link_container = $this->el('div', [
 
 ]);
 
+// Title Grid
+$grid = $this->el('div', [
+
+	 'class' => [
+		  'uk-child-width-expand',
+		  $element['title_grid_column_gap'] == $element['title_grid_row_gap'] ? 'uk-grid-{title_grid_column_gap}' : '[uk-grid-column-{title_grid_column_gap}] [uk-grid-row-{title_grid_row_gap}]',
+		  'uk-margin[-{title_margin}]-top {@!title_margin: remove} {@image_align: top}' => !$props['meta'] || $element['meta_align'] != 'above-title',
+		  'uk-margin[-{meta_margin}]-top {@!meta_margin: remove} {@image_align: top} {@meta_align: above-title}' => $props['meta'],
+	 ],
+
+	 'uk-grid' => true,
+]);
+
+$cell_title = $this->el('div', [
+
+	 'class' => [
+		  'uk-width-{title_grid_width}[@{title_grid_breakpoint}]',
+		  'uk-margin-remove-first-child',
+	 ],
+
+]);
+
+$cell_content = $this->el('div', [
+
+	 'class' => [
+		  'uk-margin-remove-first-child',
+	 ],
+
+]);
+
 ?>
+
+<?php if ($props['title'] && $element['title_align'] == 'left') : ?>
+<?= $grid($element) ?>
+	 <?= $cell_title($element) ?>
+<?php endif ?>
 
 <?php if ($props['meta'] && $element['meta_align'] == 'above-title') : ?>
 <?= $meta($element, $props['meta']) ?>
@@ -72,7 +107,10 @@ $link_container = $this->el('div', [
 <?= $meta($element, $props['meta']) ?>
 <?php endif ?>
 
-
+	 <?php if ($props['title'] && $element['title_align'] == 'left') : ?>
+	 <?= $cell_title->end() ?>
+	 <?= $cell_content($element) ?>
+	 <?php endif ?>
 
 <?php if ($element['image_align'] == 'between') : ?>
 <?= $props['image'] ?>
@@ -90,6 +128,11 @@ $link_container = $this->el('div', [
 <?= $meta($element, $props['meta']) ?>
 <?php endif ?>
 
-<?php if ($props['link'] && !$element['link_type'] && $element['link_text']) : ?>
-<?= $link_container($element, $link($element, $element['link_text'])) ?>
+		  <?php if ($props['link'] && !$element['link_type'] && $element['link_text']) : ?>
+		  <?= $link_container($element, $link($element, $element['link_text'])) ?>
+		  <?php endif ?>
+
+<?php if ($props['title'] && $element['title_align'] == 'left') : ?>
+	 <?= $cell_content->end() ?>
+<?= $grid->end() ?>
 <?php endif ?>

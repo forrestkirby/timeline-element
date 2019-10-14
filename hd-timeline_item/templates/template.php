@@ -74,21 +74,25 @@ $el = $this->el($props['link'] && $element['link_type'] == 'element' ? 'a' : 'di
 // Image align
 $grid = $this->el('div', [
 
-	'class' => [
-		'uk-child-width-expand',
-		$element['panel_style'] && $element['has_panel_card_image'] ? 'uk-grid-collapse uk-grid-match' : 'uk-grid-{image_gutter}',
-		'uk-flex-middle {@image_vertical_align}',
-	],
+	 'class' => [
+		  'uk-child-width-expand',
+		  $element['panel_style'] && $element['has_panel_card_image']
+				? 'uk-grid-collapse uk-grid-match'
+				: ($element['image_grid_column_gap'] == $element['image_grid_row_gap']
+					 ? 'uk-grid-{image_grid_column_gap}'
+					 : '[uk-grid-column-{image_grid_column_gap}] [uk-grid-row-{image_grid_row_gap}]'),
+		  'uk-flex-middle {@image_vertical_align}',
+	 ],
 
 	'uk-grid' => true,
 ]);
 
 $cell_image = $this->el('div', [
 
-	'class' => [
-		'uk-width-{image_grid_width}[@{image_breakpoint}]',
-		'uk-flex-last[@{image_breakpoint}] {@image_align: right}',
-	],
+	 'class' => [
+		  'uk-width-{image_grid_width}[@{image_grid_breakpoint}]',
+		  'uk-flex-last[@{image_grid_breakpoint}] {@image_align: right}',
+	 ],
 
 ]);
 

@@ -18,13 +18,16 @@
 		"align_medium": "left-alternate",
 		"title_hover_style": "reset",
 		"title_element": "h3",
+		"title_align": "top",
+		"title_grid_width": "1-2",
+		"title_grid_breakpoint": "m",
 		"meta_style": "meta",
 		"meta_align": "below-title",
 		"icon_ratio": 2,
 		"image_thumbnail": false,
 		"image_align": "top",
 		"image_grid_width": "1-2",
-		"image_breakpoint": "m",
+		"image_grid_breakpoint": "m",
 		"image_svg_color": "emphasis",
 		"link_text": "Read more",
 		"link_style": "default",
@@ -381,10 +384,88 @@
 			},
 			"enable": "show_title"
 		},
+		"title_align":
+		{
+			"label": "Alignment",
+			"description": "Align the title to the top or left in regards to the content.",
+			"type": "select",
+			"options":
+			{
+				"Top": "top",
+				"Left": "left"
+			},
+			"enable": "show_title"
+		},
+		"title_grid_width":
+		{
+			"label": "Grid Width",
+			"description": "Define the width of the title within the grid. Choose between percent and fixed widths or expand columns to the width of their content.",
+			"type": "select",
+			"options":
+			{
+				"Auto": "auto",
+				"50%": "1-2",
+				"33%": "1-3",
+				"25%": "1-4",
+				"20%": "1-5",
+				"Small": "small",
+				"Medium": "medium",
+				"Large": "large",
+				"X-Large": "xlarge",
+				"XX-Large": "xxlarge"
+			},
+			"enable": "show_title && title_align == 'left'"
+		},
+		"title_grid_column_gap":
+		{
+			"label": "Grid Column Gap",
+			"description": "Set the size of the gap between the title and the content.",
+			"type": "select",
+			"default": "",
+			"options":
+			{
+				"Small": "small",
+				"Medium": "medium",
+				"Default": "",
+				"Large": "large",
+				"None": "collapse"
+			},
+			"enable": "show_title && title_align == 'left'"
+		},
+		"title_grid_row_gap":
+		{
+			"label": "Grid Row Gap",
+			"description": "Set the size of the gap if the grid items stack.",
+			"type": "select",
+			"default": "",
+			"options":
+			{
+				"Small": "small",
+				"Medium": "medium",
+				"Default": "",
+				"Large": "large",
+				"None": "collapse"
+			},
+			"enable": "show_title && title_align == 'left'"
+		},
+		"title_grid_breakpoint":
+		{
+			"label": "Grid Breakpoint",
+			"description": "Set the breakpoint from which grid items will stack.",
+			"type": "select",
+			"options":
+			{
+				"Always": "",
+				"Small (Phone Landscape)": "s",
+				"Medium (Tablet Landscape)": "m",
+				"Large (Desktop)": "l"
+			},
+			"enable": "show_title && title_align == 'left'"
+		},
 		"title_margin":
 		{
 			"label": "Margin Top",
-			"description": "Set the top margin.",
+			"description": "Set the top margin. Note that the margin will only apply if the content field immediately follows another content field.",
 			"type": "select",
 			"default": "",
 			"options":
@@ -405,7 +486,7 @@
 			"type": "select",
 			"options":
 			{
-				"Default": "",
+				"None": "",
 				"Meta": "meta",
 				"2Xlarge": "heading-2xlarge",
 				"XLarge": "heading-xlarge",
@@ -429,7 +510,7 @@
 			"default": "",
 			"options":
 			{
-				"Default": "",
+				"None": "",
 				"Muted": "muted",
 				"Emphasis": "emphasis",
 				"Primary": "primary",
@@ -442,7 +523,7 @@
 		"meta_align":
 		{
 			"label": "Alignment",
-			"description": "Align the meta text above or below the title.",
+			"description": "Align the meta text.",
 			"type": "select",
 			"options":
 			{
@@ -478,7 +559,7 @@
 			"default": "",
 			"options":
 			{
-				"Default": "",
+				"None": "",
 				"Lead": "lead"
 			},
 			"enable": "show_content"
@@ -608,7 +689,7 @@
 			"default": "",
 			"options":
 			{
-				"Default": "",
+				"None": "",
 				"Muted": "muted",
 				"Emphasis": "emphasis",
 				"Primary": "primary",
@@ -616,7 +697,7 @@
 				"Warning": "warning",
 				"Danger": "danger"
 			},
-			"enable": "show_image && !image_thumbnail"
+			"enable": "show_image"
 		},
 		"image_align":
 		{
@@ -653,10 +734,10 @@
 			},
 			"enable": "show_image && (image_align == 'left' || image_align == 'right')"
 		},
-		"image_gutter":
+		"image_grid_column_gap":
 		{
-			"label": "Grid Gutter",
-			"description": "Select the gutter width between the image and content items.",
+			"label": "Grid Column Gap",
+			"description": "Set the size of the gap between the image and the content.",
 			"type": "select",
 			"default": "",
 			"options":
@@ -665,14 +746,30 @@
 				"Medium": "medium",
 				"Default": "",
 				"Large": "large",
-				"Collapse": "collapse"
+				"None": "collapse"
 			},
 			"enable": "show_image && (image_align == 'left' || image_align == 'right') && !(panel_card_image && panel_style)"
 		},
-		"image_breakpoint":
+		"image_grid_row_gap":
+		{
+			"label": "Grid Row Gap",
+			"description": "Set the size of the gap if the grid items stack.",
+			"type": "select",
+			"default": "",
+			"options":
+			{
+				"Small": "small",
+				"Medium": "medium",
+				"Default": "",
+				"Large": "large",
+				"None": "collapse"
+			},
+			"enable": "show_image && (image_align == 'left' || image_align == 'right') && !(panel_card_image && panel_style)"
+		},
+		"image_grid_breakpoint":
 		{
 			"label": "Grid Breakpoint",
-			"description": "Set the breakpoint from which grid cells will stack.",
+			"description": "Set the breakpoint from which grid items will stack.",
 			"type": "select",
 			"options":
 			{
@@ -686,7 +783,7 @@
 		"image_vertical_align":
 		{
 			"label": "Vertical Alignment",
-			"description": "Vertically center grid cells.",
+			"description": "Vertically center grid items.",
 			"type": "checkbox",
 			"text": "Center",
 			"enable": "show_image && (image_align == 'left' || image_align == 'right')"
@@ -729,7 +826,7 @@
 			"type": "select",
 			"options":
 			{
-				"Inherit": "",
+				"None": "",
 				"Muted": "muted",
 				"Emphasis": "emphasis",
 				"Primary": "primary",
@@ -919,6 +1016,11 @@
 							"title_font_family",
 							"title_color",
 							"title_element",
+							"title_align",
+							"title_grid_width",
+							"title_grid_column_gap",
+							"title_grid_row_gap",
+							"title_grid_breakpoint",
 							"title_margin"
 						]
 					},
@@ -965,8 +1067,9 @@
 							"image_box_decoration_inverse",
 							"image_align",
 							"image_grid_width",
-							"image_gutter",
-							"image_breakpoint",
+							"image_grid_column_gap",
+							"image_grid_row_gap",
+							"image_grid_breakpoint",
 							"image_vertical_align",
 							"image_margin",
 							"image_svg_inline",
