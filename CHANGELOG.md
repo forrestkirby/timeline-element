@@ -1,5 +1,11 @@
 # Timeline Element Changelog
 
+## 1.3
+
+### Added
+
+- column and row gap options introduced in [YOOtheme Pro 1.22](https://yootheme.com/blog/2019/10/14/yootheme-pro-1.22-released#column-and-row-gap)
+
 ## 1.2
 
 ### Added
