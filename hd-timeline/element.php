@@ -1,21 +1,19 @@
 <?php
 
-use YOOtheme\Util\Arr;
+namespace YOOtheme;
 
 return [
 
 	'transforms' => [
 
-		'render' => function ($node, array $params) use ($file) {
+		'render' => function ($node) {
 
 			/**
-			 * @var $app
-			 * @var $theme
-			 * @var $builder
+			 * @var Metadata $metadata
 			 */
-			extract($params);
+			$metadata = app(Metadata::class);
 
-			$app['styles']->add('builder-hd-timeline', "{$file['dirname']}/css/timeline.css", [], ['defer' => true]);
+			$metadata->set('style:builder-hd-timeline', ['href' => Path::get('./css/timeline.css'), 'defer' => true]);
 
 		},
 
