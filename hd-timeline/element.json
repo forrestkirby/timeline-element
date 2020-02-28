@@ -2,6 +2,7 @@
 	"@import": "./element.php",
 	"name": "hd-timeline",
 	"title": "HD Timeline",
+	"group": "herzog-dupont",
 	"icon": "${url:images/icon.svg}",
 	"iconSmall": "${url:images/iconSmall.svg}",
 	"element": true,
