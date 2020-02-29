@@ -32,10 +32,9 @@ Please report issues using the [Github issue tool](../../issues).
 
 ## To-do
 
-- set icon ratio
-- set icon ratio per item
-- use image instead of icon
-- use image instead of icon per item
+- dynamic content
+- set icon ratio (per item)
+- use image instead of icon (per item)
 - set text align per item
 - set item alignment per item
 - use breakpoints of style customizer (might require usage of LESS)
