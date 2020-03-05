@@ -1,5 +1,20 @@
 # Timeline Element Changelog
 
+## 2.0.0-beta.10
+
+### Added
+
+- dynamic content
+- link options
+- hover effects for title and image
+- `div` to HTML element option
+- icon to timeline item (as image substitute)
+
+### Changed
+
+- renamed properties `icon`, `icon_color`, `icon_ratio`, `icon_background`, `icon_border` to `timeline_icon`, `timeline_icon_color`, `timeline_icon_ratio`, `timeline_icon_background`, `timeline_icon_border` to avoid naming conflicts
+- renamed selector `.el-icon` to `.el-timeline-icon`
+
 ## 1.3
 
 ### Added
