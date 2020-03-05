@@ -97,7 +97,7 @@
 	padding-right: 0;
 }
 
-.timeline-container>div>.el-icon {
+.timeline-container>div>.el-timeline-icon {
 	position: absolute;
 	background-color: #fff;
 	border-radius: 50%;
@@ -106,16 +106,16 @@
 	border-style: solid;
 }
 
-.timeline-align-right>div>.el-icon {
+.timeline-align-right>div>.el-timeline-icon {
 	left: 0;
 }
 
-.timeline-align-left>div>.el-icon {
+.timeline-align-left>div>.el-timeline-icon {
 	left: calc(100% - (var(--timeline-icon-size) + var(--timeline-icon-padding) + var(--timeline-line-width)) * 2);
 }
 
-.timeline-align-right-alternate>div>.el-icon,
-.timeline-align-left-alternate>div>.el-icon {
+.timeline-align-right-alternate>div>.el-timeline-icon,
+.timeline-align-left-alternate>div>.el-timeline-icon {
 	left: calc(50% - var(--timeline-icon-size) - var(--timeline-line-width) - var(--timeline-icon-padding));
 }
 
@@ -193,16 +193,16 @@
 		padding-right: 0;
 	}
 
-	.timeline-align-right\@s>div>.el-icon {
+	.timeline-align-right\@s>div>.el-timeline-icon {
 		left: 0;
 	}
 
-	.timeline-align-left\@s>div>.el-icon {
+	.timeline-align-left\@s>div>.el-timeline-icon {
 		left: calc(100% - (var(--timeline-icon-size) + var(--timeline-icon-padding) + var(--timeline-line-width)) * 2);
 	}
 
-	.timeline-align-right-alternate\@s>div>.el-icon,
-	.timeline-align-left-alternate\@s>div>.el-icon {
+	.timeline-align-right-alternate\@s>div>.el-timeline-icon,
+	.timeline-align-left-alternate\@s>div>.el-timeline-icon {
 		left: calc(50% - var(--timeline-icon-size) - var(--timeline-line-width) - var(--timeline-icon-padding));
 	}
 
@@ -282,16 +282,16 @@
 		padding-right: 0;
 	}
 
-	.timeline-align-right\@m>div>.el-icon {
+	.timeline-align-right\@m>div>.el-timeline-icon {
 		left: 0;
 	}
 
-	.timeline-align-left\@m>div>.el-icon {
+	.timeline-align-left\@m>div>.el-timeline-icon {
 		left: calc(100% - (var(--timeline-icon-size) + var(--timeline-icon-padding) + var(--timeline-line-width)) * 2);
 	}
 
-	.timeline-align-right-alternate\@m>div>.el-icon,
-	.timeline-align-left-alternate\@m>div>.el-icon {
+	.timeline-align-right-alternate\@m>div>.el-timeline-icon,
+	.timeline-align-left-alternate\@m>div>.el-timeline-icon {
 		left: calc(50% - var(--timeline-icon-size) - var(--timeline-line-width) - var(--timeline-icon-padding));
 	}
 
@@ -371,16 +371,16 @@
 		padding-right: 0;
 	}
 
-	.timeline-align-right\@l>div>.el-icon {
+	.timeline-align-right\@l>div>.el-timeline-icon {
 		left: 0;
 	}
 
-	.timeline-align-left\@l>div>.el-icon {
+	.timeline-align-left\@l>div>.el-timeline-icon {
 		left: calc(100% - (var(--timeline-icon-size) + var(--timeline-icon-padding) + var(--timeline-line-width)) * 2);
 	}
 
-	.timeline-align-right-alternate\@l>div>.el-icon,
-	.timeline-align-left-alternate\@l>div>.el-icon {
+	.timeline-align-right-alternate\@l>div>.el-timeline-icon,
+	.timeline-align-left-alternate\@l>div>.el-timeline-icon {
 		left: calc(50% - var(--timeline-icon-size) - var(--timeline-line-width) - var(--timeline-icon-padding));
 	}
 
@@ -459,16 +459,16 @@
 		padding-right: 0;
 	}
 
-	.timeline-align-right\@xl>div>.el-icon {
+	.timeline-align-right\@xl>div>.el-timeline-icon {
 		left: 0;
 	}
 
-	.timeline-align-left\@xl>div>.el-icon {
+	.timeline-align-left\@xl>div>.el-timeline-icon {
 		left: calc(100% - (var(--timeline-icon-size) + var(--timeline-icon-padding) + var(--timeline-line-width)) * 2);
 	}
 
-	.timeline-align-right-alternate\@xl>div>.el-icon,
-	.timeline-align-left-alternate\@xl>div>.el-icon {
+	.timeline-align-right-alternate\@xl>div>.el-timeline-icon,
+	.timeline-align-left-alternate\@xl>div>.el-timeline-icon {
 		left: calc(50% - var(--timeline-icon-size) - var(--timeline-line-width) - var(--timeline-icon-padding));
 	}
 

@@ -1,70 +1,85 @@
 <?php
 
+namespace YOOtheme;
+
+/**
+ * @var ImageProvider $imageProvider
+ */
+$imageProvider = app(ImageProvider::class);
+
 $link = $props['link'] ? $this->el('a', [
-	'href' => $props['link'],
+    'href' => $props['link'],
 ]) : null;
 
 if ($link) {
 
-	$link->attr([
-		'target' => ['_blank {@link_target}'],
-		'uk-scroll' => strpos($props['link'], '#') === 0,
-	]);
+    $link->attr([
+        'target' => ['_blank {@link_target}'],
+        'uk-scroll' => strpos($props['link'], '#') === 0,
+    ]);
 
 }
 
-if ($link && $element['link_type'] == 'element') {
+if ($link && $element['panel_link']) {
 
-	$el->attr($link->attrs + [
+    $el->attr($link->attrs + [
 
-		'class' => [
-			'uk-display-block uk-link-toggle',
-		],
+        'class' => [
+            'uk-display-block uk-link-toggle',
+        ],
 
-	]);
+    ]);
 
-	$props['title'] = $this->striptags($props['title']);
-	$props['meta'] = $this->striptags($props['meta']);
-	$props['content'] = $this->striptags($props['content']);
+    $props['title'] = $this->striptags($props['title']);
+    $props['meta'] = $this->striptags($props['meta']);
+    $props['content'] = $this->striptags($props['content']);
 
-	if ($props['title'] && $element['title_hover_style'] != 'reset') {
-		$props['title'] = $this->el('span', [
-			'class' => [
-				'uk-link-{title_hover_style: heading}',
-				'uk-link {!title_hover_style}',
-			],
-		], $props['title'])->render($element);
-	}
+    if ($props['title'] && $element['title_hover_style'] != 'reset') {
+        $props['title'] = $this->el('span', [
+            'class' => [
+                'uk-link-{title_hover_style: heading}',
+                'uk-link {!title_hover_style}',
+            ],
+        ], $props['title'])->render($element);
+    }
 
-} elseif ($link && $element['link_type'] == 'content') {
+}
 
-	if ($props['image']) {
-		$props['image'] = $link($element, ['class' => [
+if ($link && $props['title'] && $element['title_link']) {
 
-			'uk-position-cover' => $element['panel_style'] && $element['has_panel_card_image'] && in_array($element['image_align'], ['left', 'right']) && !$element['image_vertical_align'],
+    $props['title'] = $link($element, [
+        'class' => [
+            'uk-link-{title_hover_style}',
+        ],
+    ], $this->striptags($props['title']));
 
-		]], $props['image']);
-	}
+}
 
-	if ($props['title']) {
-		$props['title'] = $link($element, [
-			'class' => [
-				'uk-link-{title_hover_style}',
-			],
-		], $this->striptags($props['title']));
-	}
+if ($link && $props['image'] && $element['image_link']) {
 
-} elseif ($link) {
+    $props['image'] = $link($element, ['class' => [
 
-	$link->attr([
+        'uk-display-block' => $element['panel_style'] && $element['has_panel_card_image'] && in_array($element['image_align'], ['left', 'right']),
 
-		'class' => [
-			'el-link',
-			'uk-{link_style: link-(muted|text)}',
-			'uk-button uk-button-{!link_style: |link-muted|link-text} [uk-button-{link_size}]',
-		],
+    ]], $props['image']);
 
-	]);
+}
+
+if ($link && $element['link_text']) {
+
+    if ($element['panel_link']) {
+        $link = $this->el('div');
+    }
+
+    $link->attr([
+
+        'class' => [
+            'el-link',
+            'uk-{link_style: link-(muted|text)}',
+            'uk-button uk-button-{!link_style: |link-muted|link-text} [uk-button-{link_size}]',
+        ],
+
+    ]);
 
 }
 
