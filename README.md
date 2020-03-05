@@ -2,7 +2,7 @@
 
 A custom element for the YOOtheme Pro Page Builder based on the grid element.
 
-Copyright (C) 2007–2019 YOOtheme GmbH yootheme.com, 2019 forrestkirby github.com/forrestkirby
+Copyright (C) 2007–2020 YOOtheme GmbH yootheme.com, 2020 forrestkirby github.com/forrestkirby
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -28,13 +28,13 @@ along with this program. If not, see <https://www.gnu.org/licenses/>.
 
 Please report issues using the [Github issue tool](../../issues).
 
-- doesn’t work with YOOtheme Pro 1.19.2 → please use the [earlier version](https://github.com/forrestkirby/timeline-element/tree/68eafea49db6bf588e44a33933d32638a071c60f)
+## Changes in Version 2.0.0-beta.10
+
+To avoid a naming conflict, the former property `icon` got renamed to `timeline_icon`. When updating, *first* replace the timeline item files and *second* update YOOtheme Pro. This way, your existing timeline elements should be updated properly without having to re-assign the icons.
 
 ## To-do
 
-- dynamic content
 - set icon ratio (per item)
-- use image instead of icon (per item)
 - set text align per item
 - set item alignment per item
 - use breakpoints of style customizer (might require usage of LESS)
