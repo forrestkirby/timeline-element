@@ -13,7 +13,7 @@ return [
              */
             $metadata = app(Metadata::class);
 
-            $metadata->set('style:builder-hd-timeline', ['href' => Path::get('./css/timeline.css'), 'defer' => true]);
+            $metadata->set('style:builder-hd-timeline', ['href' => Path::get('./css/timeline.css')]);
 
         },
 
