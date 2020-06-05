@@ -23,8 +23,9 @@
         "title_grid_breakpoint": "m",
         "meta_style": "meta",
         "meta_align": "below-title",
-        "icon_ratio": 4,
-        "timeline_icon_ratio": 2,
+        "content_column_breakpoint": "m",
+        "icon_width": 80,
+        "timeline_icon_width": 40,
         "image_thumbnail": false,
         "image_align": "top",
         "image_grid_width": "1-2",
@@ -198,7 +199,6 @@
             "label": "Style",
             "description": "Select one of the boxed card styles or a blank panel.",
             "type": "select",
-            "default": "",
             "options": {
                 "None": "",
                 "Card Default": "card-default",
@@ -218,7 +218,6 @@
             "label": "Padding",
             "description": "Add padding to the content if the image is top, left or right aligned.",
             "type": "select",
-            "default": "",
             "options": {
                 "None": "",
                 "Small": "small",
@@ -232,7 +231,6 @@
             "label": "Padding",
             "description": "Define the card's size by selecting the padding between the card and its content.",
             "type": "select",
-            "default": "",
             "options": {
                 "Small": "small",
                 "Default": "",
@@ -251,21 +249,19 @@
             "type": "select",
             "label": "Max Width",
             "description": "Set the maximum width.",
-            "default": "",
             "options": {
                 "None": "",
                 "Small": "small",
                 "Medium": "medium",
                 "Large": "large",
                 "X-Large": "xlarge",
-                "XX-Large": "xxlarge"
+                "2X-Large": "2xlarge"
             }
         },
         "panel_content_width": {
             "label": "1 Column Content Width",
             "description": "Set an optional content width which doesn't affect the image if there is just one column.",
             "type": "select",
-            "default": "",
             "options": {
                 "Auto": "",
                 "XSmall": "xsmall",
@@ -278,7 +274,6 @@
             "label": "Style",
             "description": "Title styles differ in font-size but may also come with a predefined color, size and font.",
             "type": "select",
-            "default": "",
             "options": {
                 "None": "",
                 "2Xlarge": "heading-2xlarge",
@@ -317,7 +312,6 @@
             "label": "Decoration",
             "description": "Decorate the title with a divider, bullet or a line that is vertically centered to the heading.",
             "type": "select",
-            "default": "",
             "options": {
                 "None": "",
                 "Divider": "divider",
@@ -330,7 +324,6 @@
             "label": "Font Family",
             "description": "Select an alternative font family.",
             "type": "select",
-            "default": "",
             "options": {
                 "None": "",
                 "Default": "default",
@@ -344,12 +337,12 @@
             "label": "Color",
             "description": "Select the text color. If the Background option is selected, styles that don't apply a background image use the primary color instead.",
             "type": "select",
-            "default": "",
             "options": {
                 "None": "",
                 "Muted": "muted",
                 "Emphasis": "emphasis",
                 "Primary": "primary",
+                "Secondary": "secondary",
                 "Success": "success",
                 "Warning": "warning",
                 "Danger": "danger",
@@ -362,12 +355,12 @@
             "description": "Choose one of the six heading elements to fit your semantic structure.",
             "type": "select",
             "options": {
-                "H1": "h1",
-                "H2": "h2",
-                "H3": "h3",
-                "H4": "h4",
-                "H5": "h5",
-                "H6": "h6",
+                "h1": "h1",
+                "h2": "h2",
+                "h3": "h3",
+                "h4": "h4",
+                "h5": "h5",
+                "h6": "h6",
                 "div": "div"
             },
             "enable": "show_title"
@@ -388,7 +381,12 @@
             "type": "select",
             "options": {
                 "Auto": "auto",
+                "80%": "4-5",
+                "75%": "3-4",
+                "66%": "2-3",
+                "60%": "3-5",
                 "50%": "1-2",
+                "40%": "2-5",
                 "33%": "1-3",
                 "25%": "1-4",
                 "20%": "1-5",
@@ -396,7 +394,7 @@
                 "Medium": "medium",
                 "Large": "large",
                 "X-Large": "xlarge",
-                "XX-Large": "xxlarge"
+                "2X-Large": "2xlarge"
             },
             "enable": "show_title && title_align == 'left'"
         },
@@ -404,7 +402,6 @@
             "label": "Grid Column Gap",
             "description": "Set the size of the gap between the title and the content.",
             "type": "select",
-            "default": "",
             "options": {
                 "Small": "small",
                 "Medium": "medium",
@@ -418,7 +415,6 @@
             "label": "Grid Row Gap",
             "description": "Set the size of the gap if the grid items stack.",
             "type": "select",
-            "default": "",
             "options": {
                 "Small": "small",
                 "Medium": "medium",
@@ -444,7 +440,6 @@
             "label": "Margin Top",
             "description": "Set the top margin. Note that the margin will only apply if the content field immediately follows another content field.",
             "type": "select",
-            "default": "",
             "options": {
                 "Small": "small",
                 "Default": "",
@@ -480,12 +475,12 @@
             "label": "Color",
             "description": "Select the text color.",
             "type": "select",
-            "default": "",
             "options": {
                 "None": "",
                 "Muted": "muted",
                 "Emphasis": "emphasis",
                 "Primary": "primary",
+                "Secondary": "secondary",
                 "Success": "success",
                 "Warning": "warning",
                 "Danger": "danger"
@@ -508,7 +503,6 @@
             "label": "Margin Top",
             "description": "Set the top margin. Note that the margin will only apply if the content field immediately follows another content field.",
             "type": "select",
-            "default": "",
             "options": {
                 "Small": "small",
                 "Default": "",
@@ -523,10 +517,10 @@
             "label": "Style",
             "description": "Select a predefined text style, including color, size and font-family.",
             "type": "select",
-            "default": "",
             "options": {
                 "None": "",
-                "Lead": "lead"
+                "Lead": "lead",
+                "Meta": "meta"
             },
             "enable": "show_content"
         },
@@ -536,11 +530,50 @@
             "text": "Force left alignment",
             "enable": "show_content"
         },
+        "content_dropcap": {
+            "label": "Drop Cap",
+            "description": "Display the first letter of the paragraph as a large initial.",
+            "type": "checkbox",
+            "text": "Enable drop cap",
+            "enable": "show_content && (content_display != 'lightbox' && lightbox || !lightbox)"
+        },
+        "content_column": {
+            "label": "Columns",
+            "description": "Set the number of text columns.",
+            "type": "select",
+            "options": {
+                "None": "",
+                "Halves": "1-2",
+                "Thirds": "1-3",
+                "Quarters": "1-4",
+                "Fifths": "1-5",
+                "Sixths": "1-6"
+            },
+            "enable": "show_content"
+        },
+        "content_column_divider": {
+            "description": "Show a divider between text columns.",
+            "type": "checkbox",
+            "text": "Show dividers",
+            "enable": "show_content && content_column"
+        },
+        "content_column_breakpoint": {
+            "label": "Columns Breakpoint",
+            "description": "Set the device width from which the text columns should apply.",
+            "type": "select",
+            "options": {
+                "Always": "",
+                "Small (Phone Landscape)": "s",
+                "Medium (Tablet Landscape)": "m",
+                "Large (Desktop)": "l",
+                "X-Large (Large Screens)": "xl"
+            },
+            "enable": "show_content && content_column"
+        },
         "content_margin": {
             "label": "Margin Top",
             "description": "Set the top margin. Note that the margin will only apply if the content field immediately follows another content field.",
             "type": "select",
-            "default": "",
             "options": {
                 "Small": "small",
                 "Default": "",
@@ -567,7 +600,6 @@
             "label": "Border",
             "description": "Select the image's border style.",
             "type": "select",
-            "default": "",
             "options": {
                 "None": "",
                 "Rounded": "rounded",
@@ -580,7 +612,6 @@
             "label": "Box Shadow",
             "description": "Select the image's box shadow size.",
             "type": "select",
-            "default": "",
             "options": {
                 "None": "",
                 "Small": "small",
@@ -594,7 +625,6 @@
             "label": "Box Decoration",
             "description": "Select the image's box decoration style. Note: The Mask option is not supported by all styles and may have no visible effect.",
             "type": "select",
-            "default": "",
             "options": {
                 "None": "",
                 "Default": "default",
@@ -621,7 +651,6 @@
             "label": "Hover Transition",
             "description": "Set the hover transition for a linked image.",
             "type": "select",
-            "default": "",
             "options": {
                 "None": "",
                 "Scale Up": "scale-up",
@@ -633,7 +662,6 @@
             "label": "Hover Box Shadow",
             "description": "Select the image's box shadow size on hover.",
             "type": "select",
-            "default": "",
             "options": {
                 "None": "",
                 "Small": "small",
@@ -643,24 +671,21 @@
             },
             "enable": "show_link && show_image && !panel_style && (image_link || panel_link)"
         },
-        "icon_ratio": {
-            "label": "Icon Size",
-            "description": "Enter a size ratio, if you want the icon to appear larger than the default font size, for example 1.5 or 2 to double the size.",
-            "attrs": {
-                "placeholder": "1"
-            },
+        "icon_width": {
+            "label": "Icon Width",
+            "description": "Set the icon width.",
             "enable": "show_image"
         },
         "icon_color": {
             "label": "Icon Color",
             "description": "Set the icon color.",
             "type": "select",
-            "default": "",
             "options": {
                 "None": "",
                 "Muted": "muted",
                 "Emphasis": "emphasis",
                 "Primary": "primary",
+                "Secondary": "secondary",
                 "Success": "success",
                 "Warning": "warning",
                 "Danger": "danger"
@@ -686,7 +711,12 @@
             "type": "select",
             "options": {
                 "Auto": "auto",
+                "80%": "4-5",
+                "75%": "3-4",
+                "66%": "2-3",
+                "60%": "3-5",
                 "50%": "1-2",
+                "40%": "2-5",
                 "33%": "1-3",
                 "25%": "1-4",
                 "20%": "1-5",
@@ -694,7 +724,7 @@
                 "Medium": "medium",
                 "Large": "large",
                 "X-Large": "xlarge",
-                "XX-Large": "xxlarge"
+                "2X-Large": "2xlarge"
             },
             "enable": "show_image && (image_align == 'left' || image_align == 'right')"
         },
@@ -702,7 +732,6 @@
             "label": "Grid Column Gap",
             "description": "Set the size of the gap between the image and the content.",
             "type": "select",
-            "default": "",
             "options": {
                 "Small": "small",
                 "Medium": "medium",
@@ -716,7 +745,6 @@
             "label": "Grid Row Gap",
             "description": "Set the size of the gap if the grid items stack.",
             "type": "select",
-            "default": "",
             "options": {
                 "Small": "small",
                 "Medium": "medium",
@@ -749,7 +777,6 @@
             "label": "Margin Top",
             "description": "Set the top margin. Note that the margin will only apply if the content field immediately follows another content field.",
             "type": "select",
-            "default": "",
             "options": {
                 "Small": "small",
                 "Default": "",
@@ -819,7 +846,6 @@
             "label": "Button Size",
             "description": "Set the button size.",
             "type": "select",
-            "default": "",
             "options": {
                 "Small": "small",
                 "Default": "",
@@ -831,7 +857,6 @@
             "label": "Margin Top",
             "description": "Set the top margin. Note that the margin will only apply if the content field immediately follows another content field.",
             "type": "select",
-            "default": "",
             "options": {
                 "Small": "small",
                 "Default": "",
@@ -866,6 +891,7 @@
         "status": "${builder.status}",
         "id": "${builder.id}",
         "class": "${builder.cls}",
+        "attributes": "${builder.attrs}",
         "css": {
             "label": "CSS",
             "description": "Enter your own custom CSS. The following selectors will be prefixed automatically for this element: <code>.el-element</code>, <code>.el-item</code>, <code>.el-title</code>, <code>.el-meta</code>, <code>.el-content</code>, <code>.el-image</code>, <code>.el-link</code>, <code>.el-timeline-icon</code>",
@@ -971,6 +997,10 @@
                             "fields": [
                                 "content_style",
                                 "content_align",
+                                "content_dropcap",
+                                "content_column",
+                                "content_column_divider",
+                                "content_column_breakpoint",
                                 "content_margin"
                             ]
                         },
@@ -997,7 +1027,7 @@
                                 "image_link",
                                 "image_transition",
                                 "image_hover_box_shadow",
-                                "icon_ratio",
+                                "icon_width",
                                 "icon_color",
                                 "image_align",
                                 "image_grid_width",

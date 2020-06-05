@@ -21,6 +21,22 @@ return [
 
     'updates' => [
 
+        '2.1.0-beta.0.1' => function ($node, array $params) {
+
+            if (@$node->props['item_maxwidth'] === 'xxlarge') {
+                $node->props['item_maxwidth'] = '2xlarge';
+            }
+
+            if (@$node->props['title_grid_width'] === 'xxlarge') {
+                $node->props['title_grid_width'] = '2xlarge';
+            }
+
+            if (@$node->props['image_grid_width'] === 'xxlarge') {
+                $node->props['image_grid_width'] = '2xlarge';
+            }
+
+        },
+
         '2.0.0-beta.9.1' => function ($node) {
 
             foreach ($node->children as &$child) {

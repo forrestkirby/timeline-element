@@ -25,7 +25,9 @@ if ($link && $element['panel_link']) {
     $el->attr($link->attrs + [
 
         'class' => [
-            'uk-display-block uk-link-toggle',
+            'uk-link-toggle',
+            // Only if `uk-flex` is not already set in `template.php` to let images cover the card height if the cards have different heights
+            'uk-display-block' => !($element['panel_style'] && $element['has_panel_card_image'] && in_array($element['image_align'], ['left', 'right'])),
         ],
 
     ]);
