@@ -65,6 +65,7 @@ $el = $this->el($props['link'] && $element['panel_link'] ? 'a' : 'div', [
         'uk-card-hover {@!panel_style: |card-hover} {@panel_link}' => $props['link'],
         'uk-card-body {@panel_style} {@!has_panel_card_image}',
         'uk-margin-remove-first-child' => (!$element['panel_style'] && !$element['has_content_padding']) || ($element['panel_style'] && !$element['has_panel_card_image']),
+        'uk-flex {@panel_style} {@has_panel_card_image} {@image_align: left|right}', // Let images cover the card height if the cards have different heights
         'uk-transition-toggle {@image_transition} {@panel_link}' => $props['image'],
     ],
 
@@ -107,7 +108,6 @@ $content = $this->el('div', [
 
 ]);
 
-
 $cell_content = $this->el('div', [
 
     'class' => [
@@ -134,16 +134,16 @@ if ($element['panel_style'] && $element['has_panel_card_image']) {
 
 <div class="timeline-item-container">
 
-<?= $el($element, $attrs); ?>
+<?= $el($element, $attrs) ?>
 
     <?php if ($props['image'] && in_array($element['image_align'], ['left', 'right'])) : ?>
 
         <?= $grid($element) ?>
-            <?= $cell_image($element, $props['image']); ?>
+            <?= $cell_image($element, $props['image']) ?>
             <?= $cell_content($element) ?>
 
                 <?php if ($this->expr($content->attrs['class'], $element)) : ?>
-                    <?= $content($element, $this->render("{$__dir}/template-content", compact('props', 'link'))); ?>
+                    <?= $content($element, $this->render("{$__dir}/template-content", compact('props', 'link'))) ?>
                 <?php else : ?>
                     <?= $this->render("{$__dir}/template-content", compact('props', 'link')) ?>
                 <?php endif ?>
@@ -158,7 +158,7 @@ if ($element['panel_style'] && $element['has_panel_card_image']) {
         <?php endif ?>
 
         <?php if ($this->expr($content->attrs['class'], $element)) : ?>
-            <?= $content($element, $this->render("{$__dir}/template-content", compact('props', 'link'))); ?>
+            <?= $content($element, $this->render("{$__dir}/template-content", compact('props', 'link'))) ?>
         <?php else : ?>
             <?= $this->render("{$__dir}/template-content", compact('props', 'link')) ?>
         <?php endif ?>

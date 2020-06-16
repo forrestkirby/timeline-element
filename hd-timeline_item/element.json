@@ -50,7 +50,9 @@
             "source": true
         },
         "link": "${builder.link}",
+        "status": "${builder.statusItem}",
         "source": "${builder.source}"
+
     },
     "fieldset": {
         "default": {
@@ -69,12 +71,7 @@
                         "link"
                     ]
                 },
-                {
-                    "title": "Advanced",
-                    "fields": [
-                        "source"
-                    ]
-                }
+                "${builder.advancedItem}"
             ]
         }
     }

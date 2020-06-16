@@ -12,7 +12,7 @@ if ($props['timeline_icon']) {
 
         'uk-icon' => [
             'icon: {0};' => $props['timeline_icon'],
-            'ratio: {timeline_icon_ratio};',
+            'width: {timeline_icon_width};',
         ],
 
         'style' => [

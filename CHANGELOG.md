@@ -1,5 +1,23 @@
 # Timeline Element Changelog
 
+## 2.1.0-beta.1
+
+### Added
+
+- meta as content style option
+- secondary text color as option
+- dynamic conditions to display element depending on a content field
+- status option to element items
+- custom attributes option
+- column options
+- dropcap option
+- more image and title grid widths
+
+### Changed
+
+- icon size based on width instead of ratio
+- rename xxlarge to 2xlarge
+
 ## 2.0.4
 
 ### Removed
