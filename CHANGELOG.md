@@ -1,5 +1,12 @@
 # Timeline Element Changelog
 
+## 2.2.0-beta.3
+
+### Added
+
+- HTML element option for meta text
+- xl grid breakpoint
+
 ## 2.1.0-beta.1
 
 ### Added

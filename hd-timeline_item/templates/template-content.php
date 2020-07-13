@@ -18,14 +18,14 @@ $title = $this->el($element['title_element'], [
 ]);
 
 // Meta
-$meta = $this->el('div', [
+$meta = $this->el($element['meta_element'], [
 
     'class' => [
         'el-meta',
         'uk-[text-{@meta_style: meta}]{meta_style}',
         'uk-text-{meta_color}',
         'uk-margin[-{meta_margin}]-top {@!meta_margin: remove}',
-        'uk-margin-remove-bottom {@!meta_style: |meta} [uk-margin-{meta_margin: remove}-top]',
+        'uk-margin-remove-bottom [uk-margin-{meta_margin: remove}-top]' => !in_array($element['meta_style'], ['', 'meta']) || $element['meta_element'] != 'div',
     ],
 
 ]);
