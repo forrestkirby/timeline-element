@@ -23,6 +23,7 @@
         "title_grid_breakpoint": "m",
         "meta_style": "meta",
         "meta_align": "below-title",
+        "meta_element": "div",
         "content_column_breakpoint": "m",
         "icon_width": 80,
         "timeline_icon_width": 40,
@@ -352,7 +353,7 @@
         },
         "title_element": {
             "label": "HTML Element",
-            "description": "Choose one of the six heading elements to fit your semantic structure.",
+            "description": "Choose one of the HTML elements to fit your semantic structure.",
             "type": "select",
             "options": {
                 "h1": "h1",
@@ -432,7 +433,8 @@
                 "Always": "",
                 "Small (Phone Landscape)": "s",
                 "Medium (Tablet Landscape)": "m",
-                "Large (Desktop)": "l"
+                "Large (Desktop)": "l",
+                "X-Large (Large Screens)": "xl"
             },
             "enable": "show_title && title_align == 'left'"
         },
@@ -496,6 +498,21 @@
                 "Below Title": "below-title",
                 "Above Content": "above-content",
                 "Below Content": "below-content"
+            },
+            "enable": "show_meta"
+        },
+        "meta_element": {
+            "label": "HTML Element",
+            "description": "Choose one of the HTML elements to fit your semantic structure.",
+            "type": "select",
+            "options": {
+                "h1": "h1",
+                "h2": "h2",
+                "h3": "h3",
+                "h4": "h4",
+                "h5": "h5",
+                "h6": "h6",
+                "div": "div"
             },
             "enable": "show_meta"
         },
@@ -762,7 +779,8 @@
                 "Always": "",
                 "Small (Phone Landscape)": "s",
                 "Medium (Tablet Landscape)": "m",
-                "Large (Desktop)": "l"
+                "Large (Desktop)": "l",
+                "X-Large (Large Screens)": "xl"
             },
             "enable": "show_image && (image_align == 'left' || image_align == 'right')"
         },
@@ -987,6 +1005,7 @@
                                 "meta_style",
                                 "meta_color",
                                 "meta_align",
+                                "meta_element",
                                 "meta_margin"
                             ]
                         },

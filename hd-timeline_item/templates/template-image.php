@@ -49,6 +49,7 @@ if ($props['image']) {
         'uk-icon' => [
             'icon: {0};' => $props['icon'],
             'width: {icon_width};',
+            'height: {icon_width};',
         ],
 
     ]);
