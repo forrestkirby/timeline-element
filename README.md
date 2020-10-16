@@ -2,7 +2,7 @@
 
 A custom element for the YOOtheme Pro Page Builder based on the grid element.
 
-Copyright (C) 2007–2020 YOOtheme GmbH yootheme.com, 2020 forrestkirby github.com/forrestkirby
+Copyright (C) 2007–2020 YOOtheme GmbH yootheme.com, 2019–2020 forrestkirby github.com/forrestkirby
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -55,11 +55,12 @@ Timeline Element is a custom element for YOOtheme Pro developed by [YOOtheme](ht
 - [Progress Element](https://github.com/forrestkirby/progress-element)
 - [Counter Element](https://github.com/forrestkirby/counter-element)
 - [Flipcard Element](https://github.com/forrestkirby/flipcard-element)
+- [Image Comparison Element](https://github.com/forrestkirby/image-comparison-element)
 
 ## Screenshots
 
-![Image](https://pionte.ch/yootheme/max/images/tutorial-timeline-2.jpg)
+![](https://herzog-dupont.de/images/tutorials/tutorial-timeline-2.jpg)
 
-![Image](https://pionte.ch/yootheme/max/images/tutorial-timeline-3.jpg)
+![](https://herzog-dupont.de/images/tutorials/tutorial-timeline-3.jpg)
 
-![Image](https://pionte.ch/yootheme/max/images/tutorial-timeline-4.jpg)
+![](https://herzog-dupont.de/images/tutorials/tutorial-timeline-4.jpg)
