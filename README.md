@@ -32,7 +32,7 @@ Please report issues using the [Github issue tool](../../issues).
 
 To avoid a naming conflict, the former property `icon` got renamed to `timeline_icon`. When updating, *first* replace the timeline item files and *second* update YOOtheme Pro. This way, your existing timeline elements should be updated properly without having to re-assign the icons.
 
-## To-do
+## List of ideas for future features
 
 - set icon ratio (per item)
 - set text align per item
@@ -40,6 +40,7 @@ To avoid a naming conflict, the former property `icon` got renamed to `timeline_
 - use breakpoints of style customizer (might require usage of LESS)
 - allow masonry effect / overlap of items for alternate item alignment to reduce empty areas
 - optimize CSS
+- horizontal layout
 
 ## About
 
