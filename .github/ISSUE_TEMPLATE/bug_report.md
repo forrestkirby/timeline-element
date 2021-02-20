@@ -27,7 +27,7 @@ If applicable, add screenshots to help explain your problem.
  - OS [e.g. iOS, Windows 10]
  - Browser [e.g. chrome, safari]
  - YOOtheme Pro Version [e.g. 2.4.0]
- - Cusotm Element Version [e.g. 2.4.0]
+ - Custom Element Version [e.g. 2.4.0]
 
 **Additional context**
 Add any other context about the problem here.
