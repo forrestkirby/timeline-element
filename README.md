@@ -2,7 +2,7 @@
 
 A custom element for the YOOtheme Pro Page Builder based on the grid element.
 
-Copyright (C) 2007–2020 YOOtheme GmbH yootheme.com, 2019–2020 forrestkirby github.com/forrestkirby
+Copyright (C) 2007–2021 YOOtheme GmbH yootheme.com, 2019–2021 forrestkirby github.com/forrestkirby
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -19,6 +19,10 @@ along with this program. If not, see <https://www.gnu.org/licenses/>.
 
 ## Installation
 
+- install the [Joomla! plugin](https://github.com/forrestkirby/herzogdupont)
+
+*or*
+
 - download and unzip the element package
 - create a [Child Theme](https://yootheme.com/support/yootheme-pro/joomla/developers-child-themes) in your YOOtheme Pro installation and activate the child theme
 - copy the complete folders `hd-timeline` and `hd-timeline_item` into the directory `/templates/yootheme_child/builder/` (Joomla!) or `/wp-content/themes/yootheme-child/builder/` (WordPress) of your installation while *child* must be the name of your child theme
@@ -27,20 +31,6 @@ along with this program. If not, see <https://www.gnu.org/licenses/>.
 ## Issues
 
 Please report issues using the [Github issue tool](../../issues).
-
-## Changes in Version 2.0.0-beta.10
-
-To avoid a naming conflict, the former property `icon` got renamed to `timeline_icon`. When updating, *first* replace the timeline item files and *second* update YOOtheme Pro. This way, your existing timeline elements should be updated properly without having to re-assign the icons.
-
-## List of ideas for future features
-
-- set icon ratio (per item)
-- set text align per item
-- set item alignment per item
-- use breakpoints of style customizer (might require usage of LESS)
-- allow masonry effect / overlap of items for alternate item alignment to reduce empty areas
-- optimize CSS
-- horizontal layout
 
 ## About
 
@@ -57,6 +47,7 @@ Timeline Element is a custom element for YOOtheme Pro developed by [YOOtheme](ht
 - [Counter Element](https://github.com/forrestkirby/counter-element)
 - [Flipcard Element](https://github.com/forrestkirby/flipcard-element)
 - [Image Comparison Element](https://github.com/forrestkirby/image-comparison-element)
+- [Herzog Dupont for YOOtheme Pro (Joomla!)](https://github.com/forrestkirby/herzogdupont-joomla)
 
 ## Screenshots
 
