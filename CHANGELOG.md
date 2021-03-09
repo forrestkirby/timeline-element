@@ -1,5 +1,11 @@
 # Timeline Element Changelog
 
+## 2.4.1
+
+### Added
+
+- panel style option to timeline item
+
 ## 2.2.0-beta.3
 
 ### Added
