@@ -19,7 +19,7 @@ along with this program. If not, see <https://www.gnu.org/licenses/>.
 
 ## Installation
 
-- install the [Joomla! plugin](https://github.com/forrestkirby/herzogdupont)
+- install the [Joomla! plugin](https://herzog-dupont.de/yootheme-pro-custom-elements#herzog-dupont-joomla-plugin)/[WordPress plugin](https://herzog-dupont.de/yootheme-pro-custom-elements#herzog-dupont-joomla-plugin)
 
 *or*
 
@@ -48,6 +48,7 @@ Timeline Element is a custom element for YOOtheme Pro developed by [YOOtheme](ht
 - [Flipcard Element](https://github.com/forrestkirby/flipcard-element)
 - [Image Comparison Element](https://github.com/forrestkirby/image-comparison-element)
 - [Herzog Dupont Joomla! Plugin](https://github.com/forrestkirby/herzogdupont-joomla)
+- [Herzog Dupont WordPress Plugin](https://github.com/forrestkirby/herzogdupont-wordpress)
 
 ## Screenshots
 
