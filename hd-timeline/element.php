@@ -1,5 +1,7 @@
 <?php
 
+/* Timeline Element Copyright (C) 2019–2021 Thomas Weidlich GNU GPL v3 */
+
 namespace YOOtheme;
 
 return [

@@ -19,7 +19,7 @@ along with this program. If not, see <https://www.gnu.org/licenses/>.
 
 ## Installation
 
-- install the [Joomla! plugin](https://herzog-dupont.de/yootheme-pro-custom-elements#herzog-dupont-joomla-plugin)/[WordPress plugin](https://herzog-dupont.de/yootheme-pro-custom-elements#herzog-dupont-joomla-plugin)
+- install the [Joomla!/WordPress plugin](https://herzog-dupont.de/yootheme-pro-custom-elements#herzog-dupont-plugin)
 
 *or*
 
@@ -30,7 +30,7 @@ along with this program. If not, see <https://www.gnu.org/licenses/>.
 
 ## Issues
 
-Please report issues using the [Github issue tool](../../issues).
+Please report issues using the [Github issue tool](https://github.com/forrestkirby/timeline-element/issues).
 
 ## About
 
