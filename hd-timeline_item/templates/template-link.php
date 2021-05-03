@@ -81,6 +81,9 @@ if ($link && $element['link_text']) {
             'el-link',
             'uk-{link_style: link-(muted|text)}',
             'uk-button uk-button-{!link_style: |link-muted|link-text} [uk-button-{link_size}]',
+            // Keep link style if panel link
+            'uk-link {@link_style:} {@panel_link}',
+            'uk-text-muted {@link_style: link-muted} {@panel_link}',
         ],
 
     ]);

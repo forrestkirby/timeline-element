@@ -1,5 +1,11 @@
 # Timeline Element Changelog
 
+## 2.4.14
+
+### Fixed
+
+- link styles if whole panel is linked
+
 ## 2.4.1
 
 ### Added

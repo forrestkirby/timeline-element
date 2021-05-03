@@ -807,7 +807,7 @@
         },
         "image_svg_inline": {
             "label": "Inline SVG",
-            "description": "Inject SVG images into the page markup, so that they can easily be styled with CSS.",
+            "description": "Inject SVG images into the page markup so that they can easily be styled with CSS.",
             "type": "checkbox",
             "text": "Make SVG stylable with CSS",
             "enable": "show_image"
