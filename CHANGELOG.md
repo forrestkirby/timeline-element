@@ -1,5 +1,17 @@
 # Timeline Element Changelog
 
+## 2.4.15
+
+### Added
+
+- link text option for items
+- full width option for buttons
+- option to animate the element or its items
+
+### Fixed
+
+- images not being clipped for round cards
+
 ## 2.4.14
 
 ### Fixed

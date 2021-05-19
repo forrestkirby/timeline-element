@@ -1,6 +1,6 @@
 <?php
 
-/* Timeline Element Copyright (C) 2019–2021 Thomas Weidlich GNU GPL v3 */
+/* Herzog Dupont Copyright (C) 2019–2021 Thomas Weidlich GNU GPL v3 */
 
 namespace YOOtheme;
 
@@ -22,6 +22,13 @@ return [
     ],
 
     'updates' => [
+
+        '2.4.14.2' => function ($node) {
+
+            $node->props['animation'] = $node->props['item_animation'];
+            $node->props['item_animation'] = true;
+
+        },
 
         '2.1.0-beta.0.1' => function ($node) {
 
