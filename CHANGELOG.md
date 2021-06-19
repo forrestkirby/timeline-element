@@ -1,5 +1,11 @@
 # Timeline Element Changelog
 
+## 2.4.21
+
+### Fixed
+
+- update script breaks builder library
+
 ## 2.4.15
 
 ### Added

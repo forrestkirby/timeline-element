@@ -352,7 +352,7 @@
         },
         "title_element": {
             "label": "HTML Element",
-            "description": "Choose one of the HTML elements to fit your semantic structure.",
+            "description": "Choose one of the HTML elements to fit the semantic structure.",
             "type": "select",
             "options": {
                 "h1": "h1",
@@ -502,7 +502,7 @@
         },
         "meta_element": {
             "label": "HTML Element",
-            "description": "Choose one of the HTML elements to fit your semantic structure.",
+            "description": "Choose one of the HTML elements to fit the semantic structure.",
             "type": "select",
             "options": {
                 "h1": "h1",

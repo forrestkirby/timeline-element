@@ -25,7 +25,7 @@ return [
 
         '2.4.14.2' => function ($node) {
 
-            $node->props['animation'] = $node->props['item_animation'];
+            $node->props['animation'] = Arr::get($node->props, 'item_animation');
             $node->props['item_animation'] = true;
 
         },
