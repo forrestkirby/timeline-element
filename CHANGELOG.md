@@ -1,5 +1,25 @@
 # Timeline Element Changelog
 
+## 2.7.4
+
+### Fixed
+
+- tile style options
+- layout update for card padding when set on items
+
+### Changed
+
+- replace CSS by LESS to use breakpoints of style customizer in timeline element
+
+## 2.7.0
+
+### Added
+
+- tile style options
+- heading options to content style
+- text lead option to meta style
+- text lead and meta options to title style
+
 ## 2.4.21
 
 ### Fixed
