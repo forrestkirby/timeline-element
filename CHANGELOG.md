@@ -1,5 +1,11 @@
 # Timeline Element Changelog
 
+## 2.7.5
+
+### Fixed
+
+- warning about undefined array key
+
 ## 2.7.4
 
 ### Fixed
@@ -9,7 +15,7 @@
 
 ### Changed
 
-- replace CSS by LESS to use breakpoints of style customizer in timeline element
+- replaced CSS by LESS to use breakpoints of style customizer in timeline element
 
 ## 2.7.0
 
