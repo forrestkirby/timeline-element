@@ -15,7 +15,7 @@ return [
              */
             $metadata = app(Metadata::class);
 
-            // replaced CSS by LESS
+            $metadata->set('style:builder-hd-timeline', ['href' => Path::get('./css/timeline.css')]);
 
         },
 
