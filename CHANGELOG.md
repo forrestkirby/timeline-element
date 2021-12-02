@@ -13,10 +13,6 @@
 - tile style options
 - layout update for card padding when set on items
 
-### Changed
-
-- replaced CSS by LESS to use breakpoints of style customizer in timeline element
-
 ## 2.7.0
 
 ### Added
