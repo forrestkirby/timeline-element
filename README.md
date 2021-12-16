@@ -1,5 +1,7 @@
 # Timeline Element
 
+*Deprecated*: All custom elements are also included in repo for the Joomla! Plugin. This repo will eventually be archived.
+
 A custom element for the YOOtheme Pro Page Builder based on the grid element.
 
 Copyright (C) 2007–2021 YOOtheme GmbH yootheme.com, 2019–2021 forrestkirby github.com/forrestkirby
