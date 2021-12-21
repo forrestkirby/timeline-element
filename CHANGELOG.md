@@ -1,5 +1,11 @@
 # Timeline Element Changelog
 
+## 2.7.11
+
+### Fixed
+
+- css selectors
+
 ## 2.7.9
 
 ### Added
