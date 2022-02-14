@@ -1,5 +1,11 @@
 # Timeline Element Changelog
 
+## 2.7.17
+
+### Removed
+
+- option to disable pointer events for absolute positioned builder elements
+
 ## 2.7.11
 
 ### Fixed
