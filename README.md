@@ -1,10 +1,10 @@
 # Timeline Element
 
-*Deprecated*: All custom elements are also included in the [repository for the Joomla! Plugin](https://github.com/forrestkirby/herzogdupont-joomla). This repo will eventually be archived.
+*Deprecated*: All custom elements are also included in the [repository for the Joomla! Plugin](https://herzog-dupont.de/yootheme-pro#plugin). This repo will eventually be archived.
 
 A custom element for the YOOtheme Pro Page Builder based on the grid element.
 
-Copyright (C) 2007–2021 YOOtheme GmbH yootheme.com, 2019–2021 forrestkirby github.com/forrestkirby
+Copyright (C) 2016–2022 YOOtheme GmbH yootheme.com, 2019–2022 forrestkirby github.com/forrestkirby
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -21,7 +21,7 @@ along with this program. If not, see <https://www.gnu.org/licenses/>.
 
 ## Installation
 
-- install the [Joomla!/WordPress plugin](https://herzog-dupont.de/yootheme-pro-custom-elements#herzog-dupont-plugin)
+- install the [Joomla!/WordPress plugin](https://herzog-dupont.de/yootheme-pro#plugin)
 
 *or*
 
@@ -49,8 +49,7 @@ Timeline Element is a custom element for YOOtheme Pro developed by [YOOtheme](ht
 - [Counter Element](https://github.com/forrestkirby/counter-element)
 - [Flipcard Element](https://github.com/forrestkirby/flipcard-element)
 - [Image Comparison Element](https://github.com/forrestkirby/image-comparison-element)
-- [Herzog Dupont Joomla! Plugin](https://github.com/forrestkirby/herzogdupont-joomla)
-- [Herzog Dupont WordPress Plugin](https://github.com/forrestkirby/herzogdupont-wordpress)
+- [Herzog Dupont Plugin for Joomla! and WordPress](https://herzog-dupont.de/yootheme-pro#plugin)
 
 ## Screenshots
 
