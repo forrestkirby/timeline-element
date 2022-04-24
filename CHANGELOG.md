@@ -1,5 +1,11 @@
 # Timeline Element Changelog
 
+## 2.7.21
+
+### Fixed
+
+- item container width
+
 ## 2.7.17
 
 ### Removed
